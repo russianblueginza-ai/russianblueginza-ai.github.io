@@ -57,10 +57,28 @@
     padding: 20px; position: relative;
   }
   .card-mover { border-color: var(--mint); box-shadow: 0 0 0 1px var(--mint); }
-  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
-  .card-top h3 { margin: 0 0 6px; font-size: 16px; font-weight: 500; }
-  .card-top h3 a { color: var(--ink); text-decoration: none; }
-  .card-top h3 a:hover { color: var(--mint-dark); }
+  .card-top { display: flex; align-items: flex-start; gap: 12px; margin-bottom: 14px; }
+  .card-image {
+    width: 96px; height: 96px; flex-shrink: 0;
+    object-fit: contain; background: #ffffff;
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  .card-image-placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: #eef1ef;
+  }
+  .card-image-placeholder::before {
+    content: "";
+    width: 28px; height: 22px;
+    background: var(--gray);
+    opacity: 0.35;
+    -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>') center/contain no-repeat;
+    mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="black" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>') center/contain no-repeat;
+  }
+  .card-top-main { flex: 1; display: flex; justify-content: space-between; align-items: flex-start; gap: 8px; min-width: 0; }
+  .card-top-main h3 { margin: 0 0 6px; font-size: 16px; font-weight: 500; }
+  .card-top-main h3 a { color: var(--ink); text-decoration: none; }
+  .card-top-main h3 a:hover { color: var(--mint-dark); }
   .grade-badge {
     display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 500;
     background: var(--mint-pale); color: var(--mint-dark); padding: 3px 8px; border-radius: 100px;
@@ -121,7 +139,7 @@
     <div class="top-row">
       <div>
         <h1>Dashboard</h1>
-        <p class="sub">Momentum, direction, and sales volume across all tracked cards. Last updated Aug 13, 2026 04:21 PM Tokyo Standard Time.</p>
+        <p class="sub">Momentum, direction, and sales volume across all tracked cards. Last updated Aug 13, 2026 04:27 PM Tokyo Standard Time.</p>
       </div>
       
     </div>
@@ -133,7 +151,7 @@
 
     <div class="stats-strip">
       <div class="stat-box"><span class="stat-num">19</span><span class="stat-label">Cards tracked</span></div>
-      <div class="stat-box"><span class="stat-num">115</span><span class="stat-label">Total 24h sales</span></div>
+      <div class="stat-box"><span class="stat-num">117</span><span class="stat-label">Total 24h sales</span></div>
       <div class="stat-box"><span class="stat-num">0</span><span class="stat-label">Movers (&ge;10%)</span></div>
     </div>
 
@@ -141,12 +159,15 @@
       
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/729387/sales-histories" target="_blank" rel="noopener">Psyduck AR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Psyduck AR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/729387/sales-histories" target="_blank" rel="noopener">Psyduck AR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">1m ago</span>
         </div>
-        <span class="last-checked">1m ago</span>
       </div>
 
       <div class="price-row">
@@ -173,15 +194,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-33" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-39" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#c4453f" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#c4453f" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,6.0 L 10.8,6.0 L 17.6,6.0 L 24.4,6.0 L 31.2,6.0 L 38.0,6.0 L 44.8,6.0 L 51.6,6.0 L 58.4,6.0 L 65.2,6.0 L 72.0,6.0 L 78.8,6.0 L 85.6,6.0 L 92.4,6.0 L 99.2,6.0 L 106.0,6.0 L 112.8,6.0 L 119.6,6.0 L 126.4,6.0 L 133.2,6.0 L 140.0,6.0 L 146.8,6.1 L 153.6,6.1 L 160.4,6.1 L 167.2,6.1 L 174.0,6.1 L 180.8,6.1 L 187.6,6.1 L 194.4,6.1 L 201.2,6.1 L 208.0,6.1 L 214.8,6.1 L 221.6,6.1 L 228.4,6.1 L 235.2,6.0 L 242.0,17.6 L 248.8,34.9 L 255.6,34.9 L 262.4,46.4 L 269.2,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-33)"/>
+      <path d="M 4.0,58.0 L 4.0,6.0 L 10.6,6.0 L 17.3,6.0 L 23.9,6.0 L 30.5,6.0 L 37.2,6.0 L 43.8,6.0 L 50.4,6.0 L 57.1,6.0 L 63.7,6.0 L 70.3,6.0 L 77.0,6.0 L 83.6,6.0 L 90.2,6.0 L 96.9,6.0 L 103.5,6.0 L 110.1,6.0 L 116.8,6.0 L 123.4,6.0 L 130.0,6.0 L 136.7,6.0 L 143.3,6.1 L 150.0,6.1 L 156.6,6.1 L 163.2,6.1 L 169.9,6.1 L 176.5,6.1 L 183.1,6.1 L 189.8,6.1 L 196.4,6.1 L 203.0,6.1 L 209.7,6.1 L 216.3,6.1 L 222.9,6.1 L 229.6,6.0 L 236.2,17.6 L 242.8,34.9 L 249.5,34.9 L 256.1,46.4 L 262.7,58.0 L 269.4,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-39)"/>
       <line x1="4" y1="6.0" x2="276" y2="6.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,6.0 10.8,6.0 17.6,6.0 24.4,6.0 31.2,6.0 38.0,6.0 44.8,6.0 51.6,6.0 58.4,6.0 65.2,6.0 72.0,6.0 78.8,6.0 85.6,6.0 92.4,6.0 99.2,6.0 106.0,6.0 112.8,6.0 119.6,6.0 126.4,6.0 133.2,6.0 140.0,6.0 146.8,6.1 153.6,6.1 160.4,6.1 167.2,6.1 174.0,6.1 180.8,6.1 187.6,6.1 194.4,6.1 201.2,6.1 208.0,6.1 214.8,6.1 221.6,6.1 228.4,6.1 235.2,6.0 242.0,17.6 248.8,34.9 255.6,34.9 262.4,46.4 269.2,58.0 276.0,58.0" fill="none" stroke="#c4453f"
+      <polyline points="4.0,6.0 10.6,6.0 17.3,6.0 23.9,6.0 30.5,6.0 37.2,6.0 43.8,6.0 50.4,6.0 57.1,6.0 63.7,6.0 70.3,6.0 77.0,6.0 83.6,6.0 90.2,6.0 96.9,6.0 103.5,6.0 110.1,6.0 116.8,6.0 123.4,6.0 130.0,6.0 136.7,6.0 143.3,6.1 150.0,6.1 156.6,6.1 163.2,6.1 169.9,6.1 176.5,6.1 183.1,6.1 189.8,6.1 196.4,6.1 203.0,6.1 209.7,6.1 216.3,6.1 222.9,6.1 229.6,6.0 236.2,17.6 242.8,34.9 249.5,34.9 256.1,46.4 262.7,58.0 269.4,58.0 276.0,58.0" fill="none" stroke="#c4453f"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="58.0" r="5" fill="#c4453f" opacity="0.35"/>
       <circle cx="276.0" cy="58.0" r="3" fill="#c4453f"/>
@@ -196,19 +217,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="23.9" width="2.3" height="14.1" fill="#7a9188" rx="1"/><rect x="5.8" y="23.9" width="2.3" height="14.1" fill="#7a9188" rx="1"/><rect x="9.6" y="16.1" width="2.3" height="21.9" fill="#7a9188" rx="1"/><rect x="13.4" y="16.1" width="2.3" height="21.9" fill="#7a9188" rx="1"/><rect x="17.2" y="14.5" width="2.3" height="23.5" fill="#7a9188" rx="1"/><rect x="21.0" y="14.5" width="2.3" height="23.5" fill="#7a9188" rx="1"/><rect x="24.8" y="13.0" width="2.3" height="25.0" fill="#7a9188" rx="1"/><rect x="28.6" y="11.4" width="2.3" height="26.6" fill="#7a9188" rx="1"/><rect x="32.4" y="8.3" width="2.3" height="29.7" fill="#7a9188" rx="1"/><rect x="36.2" y="5.1" width="2.3" height="32.9" fill="#7a9188" rx="1"/><rect x="40.0" y="5.1" width="2.3" height="32.9" fill="#7a9188" rx="1"/><rect x="43.9" y="6.7" width="2.3" height="31.3" fill="#7a9188" rx="1"/><rect x="47.7" y="9.8" width="2.3" height="28.2" fill="#7a9188" rx="1"/><rect x="51.5" y="3.6" width="2.3" height="34.4" fill="#7a9188" rx="1"/><rect x="55.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="59.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="62.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="66.7" y="8.3" width="2.3" height="29.7" fill="#7a9188" rx="1"/><rect x="70.5" y="9.8" width="2.3" height="28.2" fill="#7a9188" rx="1"/><rect x="74.3" y="11.4" width="2.3" height="26.6" fill="#7a9188" rx="1"/><rect x="78.1" y="13.0" width="2.3" height="25.0" fill="#7a9188" rx="1"/><rect x="81.9" y="14.5" width="2.3" height="23.5" fill="#7a9188" rx="1"/><rect x="85.7" y="17.7" width="2.3" height="20.3" fill="#7a9188" rx="1"/><rect x="89.5" y="17.7" width="2.3" height="20.3" fill="#7a9188" rx="1"/><rect x="93.3" y="17.7" width="2.3" height="20.3" fill="#7a9188" rx="1"/><rect x="97.1" y="19.2" width="2.3" height="18.8" fill="#7a9188" rx="1"/><rect x="100.9" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="104.7" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="108.5" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="112.3" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="116.1" y="22.3" width="2.3" height="15.7" fill="#7a9188" rx="1"/><rect x="120.0" y="23.9" width="2.3" height="14.1" fill="#7a9188" rx="1"/><rect x="123.8" y="23.9" width="2.3" height="14.1" fill="#7a9188" rx="1"/><rect x="127.6" y="23.9" width="2.3" height="14.1" fill="#7a9188" rx="1"/><rect x="131.4" y="25.5" width="2.3" height="12.5" fill="#7a9188" rx="1"/><rect x="135.2" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="139.0" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="142.8" y="20.8" width="2.3" height="17.2" fill="#7a9188" rx="1"/><rect x="146.6" y="22.3" width="2.3" height="15.7" fill="#7a9188" rx="1"/><rect x="150.4" y="22.3" width="2.3" height="15.7" fill="#7a9188" rx="1"/><rect x="154.2" y="19.2" width="2.3" height="18.8" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="23.9" width="2.2" height="14.1" fill="#7a9188" rx="1"/><rect x="5.7" y="23.9" width="2.2" height="14.1" fill="#7a9188" rx="1"/><rect x="9.4" y="16.1" width="2.2" height="21.9" fill="#7a9188" rx="1"/><rect x="13.1" y="16.1" width="2.2" height="21.9" fill="#7a9188" rx="1"/><rect x="16.9" y="14.5" width="2.2" height="23.5" fill="#7a9188" rx="1"/><rect x="20.6" y="14.5" width="2.2" height="23.5" fill="#7a9188" rx="1"/><rect x="24.3" y="13.0" width="2.2" height="25.0" fill="#7a9188" rx="1"/><rect x="28.0" y="11.4" width="2.2" height="26.6" fill="#7a9188" rx="1"/><rect x="31.7" y="8.3" width="2.2" height="29.7" fill="#7a9188" rx="1"/><rect x="35.4" y="5.1" width="2.2" height="32.9" fill="#7a9188" rx="1"/><rect x="39.1" y="5.1" width="2.2" height="32.9" fill="#7a9188" rx="1"/><rect x="42.9" y="6.7" width="2.2" height="31.3" fill="#7a9188" rx="1"/><rect x="46.6" y="9.8" width="2.2" height="28.2" fill="#7a9188" rx="1"/><rect x="50.3" y="3.6" width="2.2" height="34.4" fill="#7a9188" rx="1"/><rect x="54.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="57.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="61.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="65.1" y="8.3" width="2.2" height="29.7" fill="#7a9188" rx="1"/><rect x="68.9" y="9.8" width="2.2" height="28.2" fill="#7a9188" rx="1"/><rect x="72.6" y="11.4" width="2.2" height="26.6" fill="#7a9188" rx="1"/><rect x="76.3" y="13.0" width="2.2" height="25.0" fill="#7a9188" rx="1"/><rect x="80.0" y="14.5" width="2.2" height="23.5" fill="#7a9188" rx="1"/><rect x="83.7" y="17.7" width="2.2" height="20.3" fill="#7a9188" rx="1"/><rect x="87.4" y="17.7" width="2.2" height="20.3" fill="#7a9188" rx="1"/><rect x="91.1" y="17.7" width="2.2" height="20.3" fill="#7a9188" rx="1"/><rect x="94.9" y="19.2" width="2.2" height="18.8" fill="#7a9188" rx="1"/><rect x="98.6" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="102.3" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="106.0" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="109.7" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="113.4" y="22.3" width="2.2" height="15.7" fill="#7a9188" rx="1"/><rect x="117.1" y="23.9" width="2.2" height="14.1" fill="#7a9188" rx="1"/><rect x="120.9" y="23.9" width="2.2" height="14.1" fill="#7a9188" rx="1"/><rect x="124.6" y="23.9" width="2.2" height="14.1" fill="#7a9188" rx="1"/><rect x="128.3" y="25.5" width="2.2" height="12.5" fill="#7a9188" rx="1"/><rect x="132.0" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="135.7" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="139.4" y="20.8" width="2.2" height="17.2" fill="#7a9188" rx="1"/><rect x="143.1" y="22.3" width="2.2" height="15.7" fill="#7a9188" rx="1"/><rect x="146.9" y="22.3" width="2.2" height="15.7" fill="#7a9188" rx="1"/><rect x="150.6" y="19.2" width="2.2" height="18.8" fill="#7a9188" rx="1"/><rect x="154.3" y="19.2" width="2.2" height="18.8" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/96714/sales-histories" target="_blank" rel="noopener">Rayquaza VMAX CSR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Rayquaza VMAX CSR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/96714/sales-histories" target="_blank" rel="noopener">Rayquaza VMAX CSR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">1m ago</span>
         </div>
-        <span class="last-checked">1m ago</span>
       </div>
 
       <div class="price-row">
@@ -235,15 +259,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-32" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-38" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,58.0 L 10.8,58.0 L 17.6,58.0 L 24.4,58.0 L 31.2,58.0 L 38.0,58.0 L 44.8,58.0 L 51.6,6.9 L 58.4,6.9 L 65.2,6.9 L 72.0,6.0 L 78.8,6.0 L 85.6,6.0 L 92.4,6.0 L 99.2,6.0 L 106.0,6.0 L 112.8,6.0 L 119.6,6.0 L 126.4,6.0 L 133.2,6.0 L 140.0,6.0 L 146.8,6.0 L 153.6,6.0 L 160.4,6.9 L 167.2,6.9 L 174.0,6.9 L 180.8,6.9 L 187.6,6.9 L 194.4,6.9 L 201.2,6.9 L 208.0,6.9 L 214.8,6.9 L 221.6,6.9 L 228.4,14.8 L 235.2,22.7 L 242.0,22.7 L 248.8,22.7 L 255.6,22.7 L 262.4,22.7 L 269.2,22.7 L 276.0,22.7 L 276.0,58.0 Z" fill="url(#grad-32)"/>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 10.6,58.0 L 17.3,58.0 L 23.9,58.0 L 30.5,58.0 L 37.2,58.0 L 43.8,58.0 L 50.4,6.9 L 57.1,6.9 L 63.7,6.9 L 70.3,6.0 L 77.0,6.0 L 83.6,6.0 L 90.2,6.0 L 96.9,6.0 L 103.5,6.0 L 110.1,6.0 L 116.8,6.0 L 123.4,6.0 L 130.0,6.0 L 136.7,6.0 L 143.3,6.0 L 150.0,6.0 L 156.6,6.9 L 163.2,6.9 L 169.9,6.9 L 176.5,6.9 L 183.1,6.9 L 189.8,6.9 L 196.4,6.9 L 203.0,6.9 L 209.7,6.9 L 216.3,6.9 L 222.9,14.8 L 229.6,22.7 L 236.2,22.7 L 242.8,22.7 L 249.5,22.7 L 256.1,22.7 L 262.7,22.7 L 269.4,22.7 L 276.0,22.7 L 276.0,58.0 Z" fill="url(#grad-38)"/>
       <line x1="4" y1="58.0" x2="276" y2="58.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,58.0 10.8,58.0 17.6,58.0 24.4,58.0 31.2,58.0 38.0,58.0 44.8,58.0 51.6,6.9 58.4,6.9 65.2,6.9 72.0,6.0 78.8,6.0 85.6,6.0 92.4,6.0 99.2,6.0 106.0,6.0 112.8,6.0 119.6,6.0 126.4,6.0 133.2,6.0 140.0,6.0 146.8,6.0 153.6,6.0 160.4,6.9 167.2,6.9 174.0,6.9 180.8,6.9 187.6,6.9 194.4,6.9 201.2,6.9 208.0,6.9 214.8,6.9 221.6,6.9 228.4,14.8 235.2,22.7 242.0,22.7 248.8,22.7 255.6,22.7 262.4,22.7 269.2,22.7 276.0,22.7" fill="none" stroke="#00a870"
+      <polyline points="4.0,58.0 10.6,58.0 17.3,58.0 23.9,58.0 30.5,58.0 37.2,58.0 43.8,58.0 50.4,6.9 57.1,6.9 63.7,6.9 70.3,6.0 77.0,6.0 83.6,6.0 90.2,6.0 96.9,6.0 103.5,6.0 110.1,6.0 116.8,6.0 123.4,6.0 130.0,6.0 136.7,6.0 143.3,6.0 150.0,6.0 156.6,6.9 163.2,6.9 169.9,6.9 176.5,6.9 183.1,6.9 189.8,6.9 196.4,6.9 203.0,6.9 209.7,6.9 216.3,6.9 222.9,14.8 229.6,22.7 236.2,22.7 242.8,22.7 249.5,22.7 256.1,22.7 262.7,22.7 269.4,22.7 276.0,22.7" fill="none" stroke="#00a870"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="22.7" r="5" fill="#00a870" opacity="0.35"/>
       <circle cx="276.0" cy="22.7" r="3" fill="#00a870"/>
@@ -258,19 +282,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="5.8" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="9.6" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="13.4" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="17.2" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="21.0" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="24.8" y="34.4" width="2.3" height="3.6" fill="#7a9188" rx="1"/><rect x="28.6" y="27.2" width="2.3" height="10.8" fill="#7a9188" rx="1"/><rect x="32.4" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="36.2" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="40.0" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="43.9" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="47.7" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="51.5" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="55.3" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="59.1" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="62.9" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="66.7" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="70.5" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="74.3" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="78.1" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="81.9" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="85.7" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="89.5" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="93.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="97.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="100.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="104.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="108.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="112.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="116.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="120.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="123.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="127.6" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="131.4" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="135.2" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="139.0" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="142.8" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="146.6" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="150.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="154.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="5.7" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="9.4" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="13.1" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="16.9" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="20.6" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="24.3" y="34.4" width="2.2" height="3.6" fill="#7a9188" rx="1"/><rect x="28.0" y="27.2" width="2.2" height="10.8" fill="#7a9188" rx="1"/><rect x="31.7" y="20.0" width="2.2" height="18.0" fill="#7a9188" rx="1"/><rect x="35.4" y="20.0" width="2.2" height="18.0" fill="#7a9188" rx="1"/><rect x="39.1" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="42.9" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="46.6" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="50.3" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="54.0" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="57.7" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="61.4" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="65.1" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="68.9" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="72.6" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="76.3" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="80.0" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="83.7" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="87.4" y="12.8" width="2.2" height="25.2" fill="#7a9188" rx="1"/><rect x="91.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="94.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="98.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="102.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="106.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="109.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="113.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="117.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="120.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="124.6" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="128.3" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="132.0" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="135.7" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="139.4" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="143.1" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="146.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="150.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="154.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/138599/sales-histories" target="_blank" rel="noopener">Pikachu VMAX CSR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Pikachu VMAX CSR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/138599/sales-histories" target="_blank" rel="noopener">Pikachu VMAX CSR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">2m ago</span>
         </div>
-        <span class="last-checked">2m ago</span>
       </div>
 
       <div class="price-row">
@@ -297,15 +324,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-28" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-34" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#c4453f" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#c4453f" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,7.7 L 11.2,7.7 L 18.3,7.7 L 25.5,7.7 L 32.6,32.9 L 39.8,32.9 L 46.9,58.0 L 54.1,58.0 L 61.3,32.9 L 68.4,7.7 L 75.6,7.7 L 82.7,7.7 L 89.9,7.7 L 97.1,32.9 L 104.2,32.9 L 111.4,32.9 L 118.5,32.9 L 125.7,32.9 L 132.8,32.9 L 140.0,32.9 L 147.2,32.9 L 154.3,32.9 L 161.5,32.9 L 168.6,32.9 L 175.8,32.9 L 182.9,7.7 L 190.1,7.7 L 197.3,7.7 L 204.4,7.7 L 211.6,7.7 L 218.7,7.7 L 225.9,7.7 L 233.1,7.7 L 240.2,7.7 L 247.4,7.7 L 254.5,6.0 L 261.7,6.0 L 268.8,30.1 L 276.0,54.2 L 276.0,58.0 Z" fill="url(#grad-28)"/>
+      <path d="M 4.0,58.0 L 4.0,7.7 L 11.0,7.7 L 17.9,7.7 L 24.9,7.7 L 31.9,32.9 L 38.9,32.9 L 45.8,58.0 L 52.8,58.0 L 59.8,32.9 L 66.8,7.7 L 73.7,7.7 L 80.7,7.7 L 87.7,7.7 L 94.7,32.9 L 101.6,32.9 L 108.6,32.9 L 115.6,32.9 L 122.6,32.9 L 129.5,32.9 L 136.5,32.9 L 143.5,32.9 L 150.5,32.9 L 157.4,32.9 L 164.4,32.9 L 171.4,32.9 L 178.4,7.7 L 185.3,7.7 L 192.3,7.7 L 199.3,7.7 L 206.3,7.7 L 213.2,7.7 L 220.2,7.7 L 227.2,7.7 L 234.2,7.7 L 241.1,7.7 L 248.1,6.0 L 255.1,6.0 L 262.1,30.1 L 269.0,54.2 L 276.0,54.2 L 276.0,58.0 Z" fill="url(#grad-34)"/>
       <line x1="4" y1="7.7" x2="276" y2="7.7"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,7.7 11.2,7.7 18.3,7.7 25.5,7.7 32.6,32.9 39.8,32.9 46.9,58.0 54.1,58.0 61.3,32.9 68.4,7.7 75.6,7.7 82.7,7.7 89.9,7.7 97.1,32.9 104.2,32.9 111.4,32.9 118.5,32.9 125.7,32.9 132.8,32.9 140.0,32.9 147.2,32.9 154.3,32.9 161.5,32.9 168.6,32.9 175.8,32.9 182.9,7.7 190.1,7.7 197.3,7.7 204.4,7.7 211.6,7.7 218.7,7.7 225.9,7.7 233.1,7.7 240.2,7.7 247.4,7.7 254.5,6.0 261.7,6.0 268.8,30.1 276.0,54.2" fill="none" stroke="#c4453f"
+      <polyline points="4.0,7.7 11.0,7.7 17.9,7.7 24.9,7.7 31.9,32.9 38.9,32.9 45.8,58.0 52.8,58.0 59.8,32.9 66.8,7.7 73.7,7.7 80.7,7.7 87.7,7.7 94.7,32.9 101.6,32.9 108.6,32.9 115.6,32.9 122.6,32.9 129.5,32.9 136.5,32.9 143.5,32.9 150.5,32.9 157.4,32.9 164.4,32.9 171.4,32.9 178.4,7.7 185.3,7.7 192.3,7.7 199.3,7.7 206.3,7.7 213.2,7.7 220.2,7.7 227.2,7.7 234.2,7.7 241.1,7.7 248.1,6.0 255.1,6.0 262.1,30.1 269.0,54.2 276.0,54.2" fill="none" stroke="#c4453f"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="54.2" r="5" fill="#c4453f" opacity="0.35"/>
       <circle cx="276.0" cy="54.2" r="3" fill="#c4453f"/>
@@ -320,19 +347,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="5.8" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="9.6" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="13.4" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="17.2" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="21.0" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="24.8" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="28.6" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="32.4" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="36.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="40.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="43.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="47.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="51.5" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="55.3" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="59.1" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="62.9" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="66.7" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="70.5" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="74.3" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="78.1" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="81.9" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="85.7" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="89.5" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="93.3" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="97.1" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="100.9" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="104.7" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="108.5" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="112.3" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="116.1" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="120.0" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="123.8" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="127.6" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="131.4" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="135.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="139.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="142.8" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="146.6" y="30.8" width="2.3" height="7.2" fill="#7a9188" rx="1"/><rect x="150.4" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="154.2" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="5.7" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="9.4" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="13.1" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="16.9" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="20.6" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="24.3" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="28.0" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="31.7" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="35.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="39.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="42.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="46.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="50.3" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="54.0" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="57.7" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="61.4" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="65.1" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="68.9" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="72.6" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="76.3" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="80.0" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="83.7" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="87.4" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="91.1" y="9.2" width="2.2" height="28.8" fill="#7a9188" rx="1"/><rect x="94.9" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="98.6" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="102.3" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="106.0" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="109.7" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="113.4" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="117.1" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="120.9" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="124.6" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="128.3" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="132.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="135.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="139.4" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="143.1" y="30.8" width="2.2" height="7.2" fill="#7a9188" rx="1"/><rect x="146.9" y="23.6" width="2.2" height="14.4" fill="#7a9188" rx="1"/><rect x="150.6" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/><rect x="154.3" y="16.4" width="2.2" height="21.6" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/730958/sales-histories" target="_blank" rel="noopener">Team Rocket&#x27;s Mewtwo ex SAR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Team Rocket&#x27;s Mewtwo ex SAR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/730958/sales-histories" target="_blank" rel="noopener">Team Rocket&#x27;s Mewtwo ex SAR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">2m ago</span>
         </div>
-        <span class="last-checked">2m ago</span>
       </div>
 
       <div class="price-row">
@@ -359,15 +389,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-27" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-33" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,29.1 L 11.0,23.4 L 17.9,46.4 L 24.9,29.1 L 31.9,46.4 L 38.9,46.4 L 45.8,46.4 L 52.8,46.4 L 59.8,46.4 L 66.8,29.1 L 73.7,29.1 L 80.7,29.1 L 87.7,37.8 L 94.7,37.8 L 101.6,37.8 L 108.6,46.4 L 115.6,58.0 L 122.6,58.0 L 129.5,58.0 L 136.5,58.0 L 143.5,29.1 L 150.5,29.1 L 157.4,29.1 L 164.4,6.0 L 171.4,6.0 L 178.4,6.0 L 185.3,6.0 L 192.3,6.0 L 199.3,6.0 L 206.3,6.0 L 213.2,11.8 L 220.2,11.8 L 227.2,6.0 L 234.2,6.0 L 241.1,6.0 L 248.1,11.8 L 255.1,37.8 L 262.1,37.8 L 269.0,37.8 L 276.0,37.8 L 276.0,58.0 Z" fill="url(#grad-27)"/>
+      <path d="M 4.0,58.0 L 4.0,29.1 L 10.8,23.4 L 17.6,46.4 L 24.4,29.1 L 31.2,46.4 L 38.0,46.4 L 44.8,46.4 L 51.6,46.4 L 58.4,46.4 L 65.2,29.1 L 72.0,29.1 L 78.8,29.1 L 85.6,37.8 L 92.4,37.8 L 99.2,37.8 L 106.0,46.4 L 112.8,58.0 L 119.6,58.0 L 126.4,58.0 L 133.2,58.0 L 140.0,29.1 L 146.8,29.1 L 153.6,29.1 L 160.4,6.0 L 167.2,6.0 L 174.0,6.0 L 180.8,6.0 L 187.6,6.0 L 194.4,6.0 L 201.2,6.0 L 208.0,11.8 L 214.8,11.8 L 221.6,6.0 L 228.4,6.0 L 235.2,6.0 L 242.0,11.8 L 248.8,37.8 L 255.6,37.8 L 262.4,37.8 L 269.2,37.8 L 276.0,37.8 L 276.0,58.0 Z" fill="url(#grad-33)"/>
       <line x1="4" y1="29.1" x2="276" y2="29.1"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,29.1 11.0,23.4 17.9,46.4 24.9,29.1 31.9,46.4 38.9,46.4 45.8,46.4 52.8,46.4 59.8,46.4 66.8,29.1 73.7,29.1 80.7,29.1 87.7,37.8 94.7,37.8 101.6,37.8 108.6,46.4 115.6,58.0 122.6,58.0 129.5,58.0 136.5,58.0 143.5,29.1 150.5,29.1 157.4,29.1 164.4,6.0 171.4,6.0 178.4,6.0 185.3,6.0 192.3,6.0 199.3,6.0 206.3,6.0 213.2,11.8 220.2,11.8 227.2,6.0 234.2,6.0 241.1,6.0 248.1,11.8 255.1,37.8 262.1,37.8 269.0,37.8 276.0,37.8" fill="none" stroke="#7a9188"
+      <polyline points="4.0,29.1 10.8,23.4 17.6,46.4 24.4,29.1 31.2,46.4 38.0,46.4 44.8,46.4 51.6,46.4 58.4,46.4 65.2,29.1 72.0,29.1 78.8,29.1 85.6,37.8 92.4,37.8 99.2,37.8 106.0,46.4 112.8,58.0 119.6,58.0 126.4,58.0 133.2,58.0 140.0,29.1 146.8,29.1 153.6,29.1 160.4,6.0 167.2,6.0 174.0,6.0 180.8,6.0 187.6,6.0 194.4,6.0 201.2,6.0 208.0,11.8 214.8,11.8 221.6,6.0 228.4,6.0 235.2,6.0 242.0,11.8 248.8,37.8 255.6,37.8 262.4,37.8 269.2,37.8 276.0,37.8" fill="none" stroke="#7a9188"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="37.8" r="5" fill="#7a9188" opacity="0.35"/>
       <circle cx="276.0" cy="37.8" r="3" fill="#7a9188"/>
@@ -382,19 +412,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="27.5" width="2.4" height="10.5" fill="#7a9188" rx="1"/><rect x="5.9" y="25.2" width="2.4" height="12.8" fill="#7a9188" rx="1"/><rect x="9.8" y="20.6" width="2.4" height="17.4" fill="#7a9188" rx="1"/><rect x="13.7" y="13.6" width="2.4" height="24.4" fill="#7a9188" rx="1"/><rect x="17.6" y="11.3" width="2.4" height="26.7" fill="#7a9188" rx="1"/><rect x="21.5" y="12.5" width="2.4" height="25.5" fill="#7a9188" rx="1"/><rect x="25.4" y="9.0" width="2.4" height="29.0" fill="#7a9188" rx="1"/><rect x="29.3" y="6.6" width="2.4" height="31.4" fill="#7a9188" rx="1"/><rect x="33.2" y="6.6" width="2.4" height="31.4" fill="#7a9188" rx="1"/><rect x="37.1" y="4.3" width="2.4" height="33.7" fill="#7a9188" rx="1"/><rect x="41.0" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="44.9" y="3.2" width="2.4" height="34.8" fill="#7a9188" rx="1"/><rect x="48.8" y="7.8" width="2.4" height="30.2" fill="#7a9188" rx="1"/><rect x="52.7" y="7.8" width="2.4" height="30.2" fill="#7a9188" rx="1"/><rect x="56.6" y="7.8" width="2.4" height="30.2" fill="#7a9188" rx="1"/><rect x="60.5" y="6.6" width="2.4" height="31.4" fill="#7a9188" rx="1"/><rect x="64.4" y="10.1" width="2.4" height="27.9" fill="#7a9188" rx="1"/><rect x="68.3" y="10.1" width="2.4" height="27.9" fill="#7a9188" rx="1"/><rect x="72.2" y="10.1" width="2.4" height="27.9" fill="#7a9188" rx="1"/><rect x="76.1" y="11.3" width="2.4" height="26.7" fill="#7a9188" rx="1"/><rect x="80.0" y="13.6" width="2.4" height="24.4" fill="#7a9188" rx="1"/><rect x="83.9" y="15.9" width="2.4" height="22.1" fill="#7a9188" rx="1"/><rect x="87.8" y="15.9" width="2.4" height="22.1" fill="#7a9188" rx="1"/><rect x="91.7" y="19.4" width="2.4" height="18.6" fill="#7a9188" rx="1"/><rect x="95.6" y="24.1" width="2.4" height="13.9" fill="#7a9188" rx="1"/><rect x="99.5" y="24.1" width="2.4" height="13.9" fill="#7a9188" rx="1"/><rect x="103.4" y="22.9" width="2.4" height="15.1" fill="#7a9188" rx="1"/><rect x="107.3" y="22.9" width="2.4" height="15.1" fill="#7a9188" rx="1"/><rect x="111.2" y="22.9" width="2.4" height="15.1" fill="#7a9188" rx="1"/><rect x="115.1" y="22.9" width="2.4" height="15.1" fill="#7a9188" rx="1"/><rect x="119.0" y="21.7" width="2.4" height="16.3" fill="#7a9188" rx="1"/><rect x="122.9" y="21.7" width="2.4" height="16.3" fill="#7a9188" rx="1"/><rect x="126.8" y="24.1" width="2.4" height="13.9" fill="#7a9188" rx="1"/><rect x="130.7" y="26.4" width="2.4" height="11.6" fill="#7a9188" rx="1"/><rect x="134.6" y="27.5" width="2.4" height="10.5" fill="#7a9188" rx="1"/><rect x="138.5" y="28.7" width="2.4" height="9.3" fill="#7a9188" rx="1"/><rect x="142.4" y="29.9" width="2.4" height="8.1" fill="#7a9188" rx="1"/><rect x="146.3" y="29.9" width="2.4" height="8.1" fill="#7a9188" rx="1"/><rect x="150.2" y="29.9" width="2.4" height="8.1" fill="#7a9188" rx="1"/><rect x="154.1" y="27.5" width="2.4" height="10.5" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="27.5" width="2.3" height="10.5" fill="#7a9188" rx="1"/><rect x="5.8" y="25.2" width="2.3" height="12.8" fill="#7a9188" rx="1"/><rect x="9.6" y="20.6" width="2.3" height="17.4" fill="#7a9188" rx="1"/><rect x="13.4" y="13.6" width="2.3" height="24.4" fill="#7a9188" rx="1"/><rect x="17.2" y="11.3" width="2.3" height="26.7" fill="#7a9188" rx="1"/><rect x="21.0" y="12.5" width="2.3" height="25.5" fill="#7a9188" rx="1"/><rect x="24.8" y="9.0" width="2.3" height="29.0" fill="#7a9188" rx="1"/><rect x="28.6" y="6.6" width="2.3" height="31.4" fill="#7a9188" rx="1"/><rect x="32.4" y="6.6" width="2.3" height="31.4" fill="#7a9188" rx="1"/><rect x="36.2" y="4.3" width="2.3" height="33.7" fill="#7a9188" rx="1"/><rect x="40.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="43.9" y="3.2" width="2.3" height="34.8" fill="#7a9188" rx="1"/><rect x="47.7" y="7.8" width="2.3" height="30.2" fill="#7a9188" rx="1"/><rect x="51.5" y="7.8" width="2.3" height="30.2" fill="#7a9188" rx="1"/><rect x="55.3" y="7.8" width="2.3" height="30.2" fill="#7a9188" rx="1"/><rect x="59.1" y="6.6" width="2.3" height="31.4" fill="#7a9188" rx="1"/><rect x="62.9" y="10.1" width="2.3" height="27.9" fill="#7a9188" rx="1"/><rect x="66.7" y="10.1" width="2.3" height="27.9" fill="#7a9188" rx="1"/><rect x="70.5" y="10.1" width="2.3" height="27.9" fill="#7a9188" rx="1"/><rect x="74.3" y="11.3" width="2.3" height="26.7" fill="#7a9188" rx="1"/><rect x="78.1" y="13.6" width="2.3" height="24.4" fill="#7a9188" rx="1"/><rect x="81.9" y="15.9" width="2.3" height="22.1" fill="#7a9188" rx="1"/><rect x="85.7" y="15.9" width="2.3" height="22.1" fill="#7a9188" rx="1"/><rect x="89.5" y="19.4" width="2.3" height="18.6" fill="#7a9188" rx="1"/><rect x="93.3" y="24.1" width="2.3" height="13.9" fill="#7a9188" rx="1"/><rect x="97.1" y="24.1" width="2.3" height="13.9" fill="#7a9188" rx="1"/><rect x="100.9" y="22.9" width="2.3" height="15.1" fill="#7a9188" rx="1"/><rect x="104.7" y="22.9" width="2.3" height="15.1" fill="#7a9188" rx="1"/><rect x="108.5" y="22.9" width="2.3" height="15.1" fill="#7a9188" rx="1"/><rect x="112.3" y="22.9" width="2.3" height="15.1" fill="#7a9188" rx="1"/><rect x="116.1" y="21.7" width="2.3" height="16.3" fill="#7a9188" rx="1"/><rect x="120.0" y="21.7" width="2.3" height="16.3" fill="#7a9188" rx="1"/><rect x="123.8" y="24.1" width="2.3" height="13.9" fill="#7a9188" rx="1"/><rect x="127.6" y="26.4" width="2.3" height="11.6" fill="#7a9188" rx="1"/><rect x="131.4" y="27.5" width="2.3" height="10.5" fill="#7a9188" rx="1"/><rect x="135.2" y="28.7" width="2.3" height="9.3" fill="#7a9188" rx="1"/><rect x="139.0" y="29.9" width="2.3" height="8.1" fill="#7a9188" rx="1"/><rect x="142.8" y="29.9" width="2.3" height="8.1" fill="#7a9188" rx="1"/><rect x="146.6" y="29.9" width="2.3" height="8.1" fill="#7a9188" rx="1"/><rect x="150.4" y="27.5" width="2.3" height="10.5" fill="#7a9188" rx="1"/><rect x="154.2" y="27.5" width="2.3" height="10.5" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/107448/sales-histories" target="_blank" rel="noopener">Pikachu Playing in the Sea</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Pikachu Playing in the Sea" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/107448/sales-histories" target="_blank" rel="noopener">Pikachu Playing in the Sea</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -421,15 +454,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-39" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-45" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,58.0 L 17.0,58.0 L 29.9,58.0 L 42.9,58.0 L 55.8,58.0 L 68.8,58.0 L 81.7,58.0 L 94.7,58.0 L 107.6,58.0 L 120.6,58.0 L 133.5,58.0 L 146.5,58.0 L 159.4,58.0 L 172.4,58.0 L 185.3,58.0 L 198.3,58.0 L 211.2,58.0 L 224.2,58.0 L 237.1,58.0 L 250.1,58.0 L 263.0,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-39)"/>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 16.4,58.0 L 28.7,58.0 L 41.1,58.0 L 53.5,58.0 L 65.8,58.0 L 78.2,58.0 L 90.5,58.0 L 102.9,58.0 L 115.3,58.0 L 127.6,58.0 L 140.0,58.0 L 152.4,58.0 L 164.7,58.0 L 177.1,58.0 L 189.5,58.0 L 201.8,58.0 L 214.2,58.0 L 226.5,58.0 L 238.9,58.0 L 251.3,58.0 L 263.6,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-45)"/>
       <line x1="4" y1="58.0" x2="276" y2="58.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,58.0 17.0,58.0 29.9,58.0 42.9,58.0 55.8,58.0 68.8,58.0 81.7,58.0 94.7,58.0 107.6,58.0 120.6,58.0 133.5,58.0 146.5,58.0 159.4,58.0 172.4,58.0 185.3,58.0 198.3,58.0 211.2,58.0 224.2,58.0 237.1,58.0 250.1,58.0 263.0,58.0 276.0,58.0" fill="none" stroke="#7a9188"
+      <polyline points="4.0,58.0 16.4,58.0 28.7,58.0 41.1,58.0 53.5,58.0 65.8,58.0 78.2,58.0 90.5,58.0 102.9,58.0 115.3,58.0 127.6,58.0 140.0,58.0 152.4,58.0 164.7,58.0 177.1,58.0 189.5,58.0 201.8,58.0 214.2,58.0 226.5,58.0 238.9,58.0 251.3,58.0 263.6,58.0 276.0,58.0" fill="none" stroke="#7a9188"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="58.0" r="5" fill="#7a9188" opacity="0.35"/>
       <circle cx="276.0" cy="58.0" r="3" fill="#7a9188"/>
@@ -444,19 +477,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="32.0" width="5.6" height="6.0" fill="#7a9188" rx="1"/><rect x="9.1" y="26.0" width="5.6" height="12.0" fill="#7a9188" rx="1"/><rect x="16.2" y="26.0" width="5.6" height="12.0" fill="#7a9188" rx="1"/><rect x="23.3" y="26.0" width="5.6" height="12.0" fill="#7a9188" rx="1"/><rect x="30.4" y="26.0" width="5.6" height="12.0" fill="#7a9188" rx="1"/><rect x="37.5" y="14.0" width="5.6" height="24.0" fill="#7a9188" rx="1"/><rect x="44.5" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="51.6" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="58.7" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="65.8" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="72.9" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="80.0" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="87.1" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="94.2" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="101.3" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="108.4" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="115.5" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="122.5" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="129.6" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="136.7" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="143.8" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/><rect x="150.9" y="2.0" width="5.6" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="32.0" width="5.3" height="6.0" fill="#7a9188" rx="1"/><rect x="8.8" y="26.0" width="5.3" height="12.0" fill="#7a9188" rx="1"/><rect x="15.6" y="26.0" width="5.3" height="12.0" fill="#7a9188" rx="1"/><rect x="22.3" y="26.0" width="5.3" height="12.0" fill="#7a9188" rx="1"/><rect x="29.1" y="26.0" width="5.3" height="12.0" fill="#7a9188" rx="1"/><rect x="35.9" y="14.0" width="5.3" height="24.0" fill="#7a9188" rx="1"/><rect x="42.7" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="49.5" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="56.3" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="63.0" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="69.8" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="76.6" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="83.4" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="90.2" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="97.0" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="103.7" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="110.5" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="117.3" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="124.1" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="130.9" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="137.7" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="144.4" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/><rect x="151.2" y="2.0" width="5.3" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/91191/sales-histories" target="_blank" rel="noopener">Charizard VMAX SSR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Charizard VMAX SSR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/91191/sales-histories" target="_blank" rel="noopener">Charizard VMAX SSR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">1m ago</span>
         </div>
-        <span class="last-checked">1m ago</span>
       </div>
 
       <div class="price-row">
@@ -483,15 +519,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-34" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-40" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,14.7 L 11.0,14.7 L 17.9,14.7 L 24.9,14.7 L 31.9,14.7 L 38.9,14.7 L 45.8,14.7 L 52.8,14.7 L 59.8,14.7 L 66.8,14.7 L 73.7,14.7 L 80.7,14.7 L 87.7,14.7 L 94.7,14.7 L 101.6,14.7 L 108.6,14.7 L 115.6,14.7 L 122.6,36.3 L 129.5,36.3 L 136.5,36.3 L 143.5,36.3 L 150.5,36.3 L 157.4,36.3 L 164.4,36.3 L 171.4,36.3 L 178.4,14.7 L 185.3,58.0 L 192.3,58.0 L 199.3,58.0 L 206.3,58.0 L 213.2,58.0 L 220.2,58.0 L 227.2,58.0 L 234.2,58.0 L 241.1,58.0 L 248.1,36.3 L 255.1,14.7 L 262.1,14.7 L 269.0,14.7 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-34)"/>
+      <path d="M 4.0,58.0 L 4.0,14.7 L 10.8,14.7 L 17.6,14.7 L 24.4,14.7 L 31.2,14.7 L 38.0,14.7 L 44.8,14.7 L 51.6,14.7 L 58.4,14.7 L 65.2,14.7 L 72.0,14.7 L 78.8,14.7 L 85.6,14.7 L 92.4,14.7 L 99.2,14.7 L 106.0,14.7 L 112.8,14.7 L 119.6,36.3 L 126.4,36.3 L 133.2,36.3 L 140.0,36.3 L 146.8,36.3 L 153.6,36.3 L 160.4,36.3 L 167.2,36.3 L 174.0,14.7 L 180.8,58.0 L 187.6,58.0 L 194.4,58.0 L 201.2,58.0 L 208.0,58.0 L 214.8,58.0 L 221.6,58.0 L 228.4,58.0 L 235.2,58.0 L 242.0,36.3 L 248.8,14.7 L 255.6,14.7 L 262.4,14.7 L 269.2,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-40)"/>
       <line x1="4" y1="14.7" x2="276" y2="14.7"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,14.7 11.0,14.7 17.9,14.7 24.9,14.7 31.9,14.7 38.9,14.7 45.8,14.7 52.8,14.7 59.8,14.7 66.8,14.7 73.7,14.7 80.7,14.7 87.7,14.7 94.7,14.7 101.6,14.7 108.6,14.7 115.6,14.7 122.6,36.3 129.5,36.3 136.5,36.3 143.5,36.3 150.5,36.3 157.4,36.3 164.4,36.3 171.4,36.3 178.4,14.7 185.3,58.0 192.3,58.0 199.3,58.0 206.3,58.0 213.2,58.0 220.2,58.0 227.2,58.0 234.2,58.0 241.1,58.0 248.1,36.3 255.1,14.7 262.1,14.7 269.0,14.7 276.0,6.0" fill="none" stroke="#7a9188"
+      <polyline points="4.0,14.7 10.8,14.7 17.6,14.7 24.4,14.7 31.2,14.7 38.0,14.7 44.8,14.7 51.6,14.7 58.4,14.7 65.2,14.7 72.0,14.7 78.8,14.7 85.6,14.7 92.4,14.7 99.2,14.7 106.0,14.7 112.8,14.7 119.6,36.3 126.4,36.3 133.2,36.3 140.0,36.3 146.8,36.3 153.6,36.3 160.4,36.3 167.2,36.3 174.0,14.7 180.8,58.0 187.6,58.0 194.4,58.0 201.2,58.0 208.0,58.0 214.8,58.0 221.6,58.0 228.4,58.0 235.2,58.0 242.0,36.3 248.8,14.7 255.6,14.7 262.4,14.7 269.2,6.0 276.0,6.0" fill="none" stroke="#7a9188"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="6.0" r="5" fill="#7a9188" opacity="0.35"/>
       <circle cx="276.0" cy="6.0" r="3" fill="#7a9188"/>
@@ -506,19 +542,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="5.9" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="9.8" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="13.7" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="17.6" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="21.5" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="25.4" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="29.3" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="33.2" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="37.1" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="41.0" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="44.9" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="48.8" y="16.4" width="2.4" height="21.6" fill="#7a9188" rx="1"/><rect x="52.7" y="16.4" width="2.4" height="21.6" fill="#7a9188" rx="1"/><rect x="56.6" y="16.4" width="2.4" height="21.6" fill="#7a9188" rx="1"/><rect x="60.5" y="16.4" width="2.4" height="21.6" fill="#7a9188" rx="1"/><rect x="64.4" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="68.3" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="72.2" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="76.1" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="80.0" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="83.9" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="87.8" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="91.7" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="95.6" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="99.5" y="5.6" width="2.4" height="32.4" fill="#7a9188" rx="1"/><rect x="103.4" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="107.3" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="111.2" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="115.1" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="119.0" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="122.9" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="126.8" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="130.7" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="134.6" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="138.5" y="9.2" width="2.4" height="28.8" fill="#7a9188" rx="1"/><rect x="142.4" y="5.6" width="2.4" height="32.4" fill="#7a9188" rx="1"/><rect x="146.3" y="12.8" width="2.4" height="25.2" fill="#7a9188" rx="1"/><rect x="150.2" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="154.1" y="23.6" width="2.4" height="14.4" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="5.8" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="9.6" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="13.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="17.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="21.0" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="24.8" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="28.6" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="32.4" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="36.2" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="40.0" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="43.9" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="47.7" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="51.5" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="55.3" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="59.1" y="16.4" width="2.3" height="21.6" fill="#7a9188" rx="1"/><rect x="62.9" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="66.7" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="70.5" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="74.3" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="78.1" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="81.9" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="85.7" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="89.5" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="93.3" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="97.1" y="5.6" width="2.3" height="32.4" fill="#7a9188" rx="1"/><rect x="100.9" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="104.7" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="108.5" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="112.3" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="116.1" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="120.0" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="123.8" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="127.6" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="131.4" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="135.2" y="9.2" width="2.3" height="28.8" fill="#7a9188" rx="1"/><rect x="139.0" y="5.6" width="2.3" height="32.4" fill="#7a9188" rx="1"/><rect x="142.8" y="12.8" width="2.3" height="25.2" fill="#7a9188" rx="1"/><rect x="146.6" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="150.4" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/><rect x="154.2" y="23.6" width="2.3" height="14.4" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/91133/sales-histories" target="_blank" rel="noopener">Mewtwo V SR: SA</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Mewtwo V SR: SA" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/91133/sales-histories" target="_blank" rel="noopener">Mewtwo V SR: SA</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">2m ago</span>
         </div>
-        <span class="last-checked">2m ago</span>
       </div>
 
       <div class="price-row">
@@ -545,15 +584,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-30" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-36" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,49.4 L 10.8,49.4 L 17.6,49.4 L 24.4,49.4 L 31.2,49.4 L 38.0,49.4 L 44.8,49.4 L 51.6,49.4 L 58.4,49.4 L 65.2,49.4 L 72.0,33.3 L 78.8,45.6 L 85.6,45.6 L 92.4,45.6 L 99.2,45.6 L 106.0,45.6 L 112.8,45.6 L 119.6,45.6 L 126.4,45.6 L 133.2,45.6 L 140.0,45.6 L 146.8,45.6 L 153.6,58.0 L 160.4,58.0 L 167.2,32.0 L 174.0,6.0 L 180.8,6.0 L 187.6,6.0 L 194.4,6.0 L 201.2,6.0 L 208.0,6.0 L 214.8,6.0 L 221.6,6.0 L 228.4,6.0 L 235.2,6.0 L 242.0,6.0 L 248.8,6.0 L 255.6,6.0 L 262.4,6.0 L 269.2,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-30)"/>
+      <path d="M 4.0,58.0 L 4.0,49.4 L 10.6,49.4 L 17.3,49.4 L 23.9,49.4 L 30.5,49.4 L 37.2,49.4 L 43.8,49.4 L 50.4,49.4 L 57.1,49.4 L 63.7,49.4 L 70.3,33.3 L 77.0,45.6 L 83.6,45.6 L 90.2,45.6 L 96.9,45.6 L 103.5,45.6 L 110.1,45.6 L 116.8,45.6 L 123.4,45.6 L 130.0,45.6 L 136.7,45.6 L 143.3,45.6 L 150.0,58.0 L 156.6,58.0 L 163.2,32.0 L 169.9,6.0 L 176.5,6.0 L 183.1,6.0 L 189.8,6.0 L 196.4,6.0 L 203.0,6.0 L 209.7,6.0 L 216.3,6.0 L 222.9,6.0 L 229.6,6.0 L 236.2,6.0 L 242.8,6.0 L 249.5,6.0 L 256.1,6.0 L 262.7,6.0 L 269.4,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-36)"/>
       <line x1="4" y1="49.4" x2="276" y2="49.4"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,49.4 10.8,49.4 17.6,49.4 24.4,49.4 31.2,49.4 38.0,49.4 44.8,49.4 51.6,49.4 58.4,49.4 65.2,49.4 72.0,33.3 78.8,45.6 85.6,45.6 92.4,45.6 99.2,45.6 106.0,45.6 112.8,45.6 119.6,45.6 126.4,45.6 133.2,45.6 140.0,45.6 146.8,45.6 153.6,58.0 160.4,58.0 167.2,32.0 174.0,6.0 180.8,6.0 187.6,6.0 194.4,6.0 201.2,6.0 208.0,6.0 214.8,6.0 221.6,6.0 228.4,6.0 235.2,6.0 242.0,6.0 248.8,6.0 255.6,6.0 262.4,6.0 269.2,6.0 276.0,6.0" fill="none" stroke="#00a870"
+      <polyline points="4.0,49.4 10.6,49.4 17.3,49.4 23.9,49.4 30.5,49.4 37.2,49.4 43.8,49.4 50.4,49.4 57.1,49.4 63.7,49.4 70.3,33.3 77.0,45.6 83.6,45.6 90.2,45.6 96.9,45.6 103.5,45.6 110.1,45.6 116.8,45.6 123.4,45.6 130.0,45.6 136.7,45.6 143.3,45.6 150.0,58.0 156.6,58.0 163.2,32.0 169.9,6.0 176.5,6.0 183.1,6.0 189.8,6.0 196.4,6.0 203.0,6.0 209.7,6.0 216.3,6.0 222.9,6.0 229.6,6.0 236.2,6.0 242.8,6.0 249.5,6.0 256.1,6.0 262.7,6.0 269.4,6.0 276.0,6.0" fill="none" stroke="#00a870"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="6.0" r="5" fill="#00a870" opacity="0.35"/>
       <circle cx="276.0" cy="6.0" r="3" fill="#00a870"/>
@@ -568,19 +607,87 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="5.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="9.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="13.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="17.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="21.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="24.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="28.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="32.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="36.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="40.0" y="26.0" width="2.3" height="12.0" fill="#7a9188" rx="1"/><rect x="43.9" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="47.7" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="51.5" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="55.3" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="59.1" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="62.9" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="66.7" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="70.5" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="74.3" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="78.1" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="81.9" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="85.7" y="26.0" width="2.3" height="12.0" fill="#7a9188" rx="1"/><rect x="89.5" y="26.0" width="2.3" height="12.0" fill="#7a9188" rx="1"/><rect x="93.3" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="97.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="100.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="104.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="108.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="112.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="116.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="120.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="123.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="127.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="131.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="135.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="139.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="142.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="146.6" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="150.4" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="154.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="5.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="9.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="13.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="16.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="20.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="24.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="28.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="31.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="35.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="39.1" y="26.0" width="2.2" height="12.0" fill="#7a9188" rx="1"/><rect x="42.9" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="46.6" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="50.3" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="54.0" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="57.7" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="61.4" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="65.1" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="68.9" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="72.6" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="76.3" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="80.0" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="83.7" y="26.0" width="2.2" height="12.0" fill="#7a9188" rx="1"/><rect x="87.4" y="26.0" width="2.2" height="12.0" fill="#7a9188" rx="1"/><rect x="91.1" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="94.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="98.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="102.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="106.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="109.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="113.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="117.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="120.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="124.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="128.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="132.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="135.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="139.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="143.1" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="146.9" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="150.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="154.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/128121/sales-histories" target="_blank" rel="noopener">Mew ex SAR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="MEGA Charizard X ex MA" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/722239/sales-histories" target="_blank" rel="noopener">MEGA Charizard X ex MA</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">2m ago</span>
         </div>
-        <span class="last-checked">just now</span>
+      </div>
+
+      <div class="price-row">
+        <span class="price">Y15,300</span>
+        <div class="price-row-badges">
+          <span class="trend-pill pill-up">UPTREND</span>
+          <span class="conf conf-low">LOW</span>
+        </div>
+      </div>
+
+      <div class="momentum-row">
+        <div class="momentum-item">
+          <span class="momentum-label">vs 24h ago</span>
+          <span class="dir dir-up">&uarr; +Y303 &middot; +2.0%</span>
+        </div>
+        <div class="momentum-item">
+          <span class="momentum-label">vs 1h ago</span>
+          <span class="dir dir-flat">&rarr; +Y0 &middot; +0.0%</span>
+        </div>
+      </div>
+
+      <div class="spark-row">
+        <div class="spark-block">
+          <span class="spark-label">Price (24h median, last 48h)</span>
+          <svg width="280" height="64" viewBox="0 0 280 64">
+      <defs>
+        <linearGradient id="grad-37" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M 4.0,58.0 L 4.0,49.3 L 10.6,58.0 L 17.3,58.0 L 23.9,58.0 L 30.5,58.0 L 37.2,58.0 L 43.8,49.3 L 50.4,49.3 L 57.1,49.3 L 63.7,49.3 L 70.3,40.8 L 77.0,49.3 L 83.6,49.3 L 90.2,40.8 L 96.9,32.3 L 103.5,32.3 L 110.1,32.3 L 116.8,32.3 L 123.4,32.1 L 130.0,32.1 L 136.7,32.1 L 143.3,32.0 L 150.0,32.0 L 156.6,32.0 L 163.2,32.0 L 169.9,14.7 L 176.5,14.7 L 183.1,14.7 L 189.8,14.7 L 196.4,14.7 L 203.0,14.7 L 209.7,14.7 L 216.3,14.7 L 222.9,14.7 L 229.6,10.3 L 236.2,6.0 L 242.8,8.2 L 249.5,8.2 L 256.1,8.2 L 262.7,6.0 L 269.4,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-37)"/>
+      <line x1="4" y1="49.3" x2="276" y2="49.3"
+            stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
+      <polyline points="4.0,49.3 10.6,58.0 17.3,58.0 23.9,58.0 30.5,58.0 37.2,58.0 43.8,49.3 50.4,49.3 57.1,49.3 63.7,49.3 70.3,40.8 77.0,49.3 83.6,49.3 90.2,40.8 96.9,32.3 103.5,32.3 110.1,32.3 116.8,32.3 123.4,32.1 130.0,32.1 136.7,32.1 143.3,32.0 150.0,32.0 156.6,32.0 163.2,32.0 169.9,14.7 176.5,14.7 183.1,14.7 189.8,14.7 196.4,14.7 203.0,14.7 209.7,14.7 216.3,14.7 222.9,14.7 229.6,10.3 236.2,6.0 242.8,8.2 249.5,8.2 256.1,8.2 262.7,6.0 269.4,6.0 276.0,6.0" fill="none" stroke="#00a870"
+                stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle class="pulse-ring" cx="276.0" cy="6.0" r="5" fill="#00a870" opacity="0.35"/>
+      <circle cx="276.0" cy="6.0" r="3" fill="#00a870"/>
+    </svg>
+        </div>
+      </div>
+
+      <div class="volume-row">
+        <div class="volume-stat">
+          <span class="volume-number">44</span>
+          <span class="volume-label">sales in last 24h</span>
+        </div>
+        <div class="spark-block">
+          <span class="spark-label">Volume trend</span>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="24.1" width="2.2" height="13.9" fill="#7a9188" rx="1"/><rect x="5.7" y="19.2" width="2.2" height="18.8" fill="#7a9188" rx="1"/><rect x="9.4" y="16.7" width="2.2" height="21.3" fill="#7a9188" rx="1"/><rect x="13.1" y="16.7" width="2.2" height="21.3" fill="#7a9188" rx="1"/><rect x="16.9" y="15.9" width="2.2" height="22.1" fill="#7a9188" rx="1"/><rect x="20.6" y="15.9" width="2.2" height="22.1" fill="#7a9188" rx="1"/><rect x="24.3" y="14.3" width="2.2" height="23.7" fill="#7a9188" rx="1"/><rect x="28.0" y="12.6" width="2.2" height="25.4" fill="#7a9188" rx="1"/><rect x="31.7" y="10.2" width="2.2" height="27.8" fill="#7a9188" rx="1"/><rect x="35.4" y="9.4" width="2.2" height="28.6" fill="#7a9188" rx="1"/><rect x="39.1" y="8.5" width="2.2" height="29.5" fill="#7a9188" rx="1"/><rect x="42.9" y="10.2" width="2.2" height="27.8" fill="#7a9188" rx="1"/><rect x="46.6" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="50.3" y="11.8" width="2.2" height="26.2" fill="#7a9188" rx="1"/><rect x="54.0" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="57.7" y="10.2" width="2.2" height="27.8" fill="#7a9188" rx="1"/><rect x="61.4" y="10.2" width="2.2" height="27.8" fill="#7a9188" rx="1"/><rect x="65.1" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="68.9" y="10.2" width="2.2" height="27.8" fill="#7a9188" rx="1"/><rect x="72.6" y="9.4" width="2.2" height="28.6" fill="#7a9188" rx="1"/><rect x="76.3" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="80.0" y="13.5" width="2.2" height="24.5" fill="#7a9188" rx="1"/><rect x="83.7" y="15.1" width="2.2" height="22.9" fill="#7a9188" rx="1"/><rect x="87.4" y="17.5" width="2.2" height="20.5" fill="#7a9188" rx="1"/><rect x="91.1" y="13.5" width="2.2" height="24.5" fill="#7a9188" rx="1"/><rect x="94.9" y="7.7" width="2.2" height="30.3" fill="#7a9188" rx="1"/><rect x="98.6" y="6.1" width="2.2" height="31.9" fill="#7a9188" rx="1"/><rect x="102.3" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="106.0" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="109.7" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="113.4" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="117.1" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="120.9" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="124.6" y="4.5" width="2.2" height="33.5" fill="#7a9188" rx="1"/><rect x="128.3" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="132.0" y="5.3" width="2.2" height="32.7" fill="#7a9188" rx="1"/><rect x="135.7" y="3.6" width="2.2" height="34.4" fill="#7a9188" rx="1"/><rect x="139.4" y="3.6" width="2.2" height="34.4" fill="#7a9188" rx="1"/><rect x="143.1" y="3.6" width="2.2" height="34.4" fill="#7a9188" rx="1"/><rect x="146.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="150.6" y="2.8" width="2.2" height="35.2" fill="#7a9188" rx="1"/><rect x="154.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/></svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Mew ex SAR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/128121/sales-histories" target="_blank" rel="noopener">Mew ex SAR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
+        </div>
       </div>
 
       <div class="price-row">
@@ -607,15 +714,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-37" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-43" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,58.0 L 11.0,58.0 L 17.9,58.0 L 24.9,58.0 L 31.9,58.0 L 38.9,25.3 L 45.8,25.3 L 52.8,25.3 L 59.8,24.2 L 66.8,24.2 L 73.7,24.7 L 80.7,24.2 L 87.7,20.7 L 94.7,20.7 L 101.6,24.2 L 108.6,24.2 L 115.6,24.2 L 122.6,24.2 L 129.5,24.2 L 136.5,24.2 L 143.5,20.7 L 150.5,17.1 L 157.4,17.1 L 164.4,17.1 L 171.4,15.7 L 178.4,14.2 L 185.3,13.8 L 192.3,13.4 L 199.3,13.4 L 206.3,13.4 L 213.2,13.4 L 220.2,13.4 L 227.2,13.4 L 234.2,13.4 L 241.1,14.2 L 248.1,14.2 L 255.1,10.1 L 262.1,10.1 L 269.0,10.1 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-37)"/>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 10.8,58.0 L 17.6,58.0 L 24.4,58.0 L 31.2,58.0 L 38.0,25.3 L 44.8,25.3 L 51.6,25.3 L 58.4,24.2 L 65.2,24.2 L 72.0,24.7 L 78.8,24.2 L 85.6,20.7 L 92.4,20.7 L 99.2,24.2 L 106.0,24.2 L 112.8,24.2 L 119.6,24.2 L 126.4,24.2 L 133.2,24.2 L 140.0,20.7 L 146.8,17.1 L 153.6,17.1 L 160.4,17.1 L 167.2,15.7 L 174.0,14.2 L 180.8,13.8 L 187.6,13.4 L 194.4,13.4 L 201.2,13.4 L 208.0,13.4 L 214.8,13.4 L 221.6,13.4 L 228.4,13.4 L 235.2,14.2 L 242.0,14.2 L 248.8,10.1 L 255.6,10.1 L 262.4,10.1 L 269.2,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-43)"/>
       <line x1="4" y1="58.0" x2="276" y2="58.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,58.0 11.0,58.0 17.9,58.0 24.9,58.0 31.9,58.0 38.9,25.3 45.8,25.3 52.8,25.3 59.8,24.2 66.8,24.2 73.7,24.7 80.7,24.2 87.7,20.7 94.7,20.7 101.6,24.2 108.6,24.2 115.6,24.2 122.6,24.2 129.5,24.2 136.5,24.2 143.5,20.7 150.5,17.1 157.4,17.1 164.4,17.1 171.4,15.7 178.4,14.2 185.3,13.8 192.3,13.4 199.3,13.4 206.3,13.4 213.2,13.4 220.2,13.4 227.2,13.4 234.2,13.4 241.1,14.2 248.1,14.2 255.1,10.1 262.1,10.1 269.0,10.1 276.0,6.0" fill="none" stroke="#00a870"
+      <polyline points="4.0,58.0 10.8,58.0 17.6,58.0 24.4,58.0 31.2,58.0 38.0,25.3 44.8,25.3 51.6,25.3 58.4,24.2 65.2,24.2 72.0,24.7 78.8,24.2 85.6,20.7 92.4,20.7 99.2,24.2 106.0,24.2 112.8,24.2 119.6,24.2 126.4,24.2 133.2,24.2 140.0,20.7 146.8,17.1 153.6,17.1 160.4,17.1 167.2,15.7 174.0,14.2 180.8,13.8 187.6,13.4 194.4,13.4 201.2,13.4 208.0,13.4 214.8,13.4 221.6,13.4 228.4,13.4 235.2,14.2 242.0,14.2 248.8,10.1 255.6,10.1 262.4,10.1 269.2,6.0 276.0,6.0" fill="none" stroke="#00a870"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="6.0" r="5" fill="#00a870" opacity="0.35"/>
       <circle cx="276.0" cy="6.0" r="3" fill="#00a870"/>
@@ -630,81 +737,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="35.9" width="2.4" height="2.1" fill="#7a9188" rx="1"/><rect x="5.9" y="33.8" width="2.4" height="4.2" fill="#7a9188" rx="1"/><rect x="9.8" y="33.8" width="2.4" height="4.2" fill="#7a9188" rx="1"/><rect x="13.7" y="31.6" width="2.4" height="6.4" fill="#7a9188" rx="1"/><rect x="17.6" y="31.6" width="2.4" height="6.4" fill="#7a9188" rx="1"/><rect x="21.5" y="23.2" width="2.4" height="14.8" fill="#7a9188" rx="1"/><rect x="25.4" y="23.2" width="2.4" height="14.8" fill="#7a9188" rx="1"/><rect x="29.3" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="33.2" y="14.7" width="2.4" height="23.3" fill="#7a9188" rx="1"/><rect x="37.1" y="14.7" width="2.4" height="23.3" fill="#7a9188" rx="1"/><rect x="41.0" y="12.6" width="2.4" height="25.4" fill="#7a9188" rx="1"/><rect x="44.9" y="10.5" width="2.4" height="27.5" fill="#7a9188" rx="1"/><rect x="48.8" y="8.4" width="2.4" height="29.6" fill="#7a9188" rx="1"/><rect x="52.7" y="8.4" width="2.4" height="29.6" fill="#7a9188" rx="1"/><rect x="56.6" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="60.5" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="64.4" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="68.3" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="72.2" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="76.1" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="80.0" y="4.1" width="2.4" height="33.9" fill="#7a9188" rx="1"/><rect x="83.9" y="4.1" width="2.4" height="33.9" fill="#7a9188" rx="1"/><rect x="87.8" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="91.7" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="95.6" y="4.1" width="2.4" height="33.9" fill="#7a9188" rx="1"/><rect x="99.5" y="6.2" width="2.4" height="31.8" fill="#7a9188" rx="1"/><rect x="103.4" y="12.6" width="2.4" height="25.4" fill="#7a9188" rx="1"/><rect x="107.3" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="111.2" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="115.1" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="119.0" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="122.9" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="126.8" y="18.9" width="2.4" height="19.1" fill="#7a9188" rx="1"/><rect x="130.7" y="23.2" width="2.4" height="14.8" fill="#7a9188" rx="1"/><rect x="134.6" y="27.4" width="2.4" height="10.6" fill="#7a9188" rx="1"/><rect x="138.5" y="27.4" width="2.4" height="10.6" fill="#7a9188" rx="1"/><rect x="142.4" y="25.3" width="2.4" height="12.7" fill="#7a9188" rx="1"/><rect x="146.3" y="29.5" width="2.4" height="8.5" fill="#7a9188" rx="1"/><rect x="150.2" y="29.5" width="2.4" height="8.5" fill="#7a9188" rx="1"/><rect x="154.1" y="27.4" width="2.4" height="10.6" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="35.9" width="2.3" height="2.1" fill="#7a9188" rx="1"/><rect x="5.8" y="33.8" width="2.3" height="4.2" fill="#7a9188" rx="1"/><rect x="9.6" y="33.8" width="2.3" height="4.2" fill="#7a9188" rx="1"/><rect x="13.4" y="31.6" width="2.3" height="6.4" fill="#7a9188" rx="1"/><rect x="17.2" y="31.6" width="2.3" height="6.4" fill="#7a9188" rx="1"/><rect x="21.0" y="23.2" width="2.3" height="14.8" fill="#7a9188" rx="1"/><rect x="24.8" y="23.2" width="2.3" height="14.8" fill="#7a9188" rx="1"/><rect x="28.6" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="32.4" y="14.7" width="2.3" height="23.3" fill="#7a9188" rx="1"/><rect x="36.2" y="14.7" width="2.3" height="23.3" fill="#7a9188" rx="1"/><rect x="40.0" y="12.6" width="2.3" height="25.4" fill="#7a9188" rx="1"/><rect x="43.9" y="10.5" width="2.3" height="27.5" fill="#7a9188" rx="1"/><rect x="47.7" y="8.4" width="2.3" height="29.6" fill="#7a9188" rx="1"/><rect x="51.5" y="8.4" width="2.3" height="29.6" fill="#7a9188" rx="1"/><rect x="55.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="59.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="62.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="66.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="70.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="74.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="78.1" y="4.1" width="2.3" height="33.9" fill="#7a9188" rx="1"/><rect x="81.9" y="4.1" width="2.3" height="33.9" fill="#7a9188" rx="1"/><rect x="85.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="89.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="93.3" y="4.1" width="2.3" height="33.9" fill="#7a9188" rx="1"/><rect x="97.1" y="6.2" width="2.3" height="31.8" fill="#7a9188" rx="1"/><rect x="100.9" y="12.6" width="2.3" height="25.4" fill="#7a9188" rx="1"/><rect x="104.7" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="108.5" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="112.3" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="116.1" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="120.0" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="123.8" y="18.9" width="2.3" height="19.1" fill="#7a9188" rx="1"/><rect x="127.6" y="23.2" width="2.3" height="14.8" fill="#7a9188" rx="1"/><rect x="131.4" y="27.4" width="2.3" height="10.6" fill="#7a9188" rx="1"/><rect x="135.2" y="27.4" width="2.3" height="10.6" fill="#7a9188" rx="1"/><rect x="139.0" y="25.3" width="2.3" height="12.7" fill="#7a9188" rx="1"/><rect x="142.8" y="29.5" width="2.3" height="8.5" fill="#7a9188" rx="1"/><rect x="146.6" y="29.5" width="2.3" height="8.5" fill="#7a9188" rx="1"/><rect x="150.4" y="27.4" width="2.3" height="10.6" fill="#7a9188" rx="1"/><rect x="154.2" y="27.4" width="2.3" height="10.6" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/722239/sales-histories" target="_blank" rel="noopener">MEGA Charizard X ex MA</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Umbreon V SR: SA" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/91176/sales-histories" target="_blank" rel="noopener">Umbreon V SR: SA</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">2m ago</span>
-      </div>
-
-      <div class="price-row">
-        <span class="price">Y15,300</span>
-        <div class="price-row-badges">
-          <span class="trend-pill pill-up">UPTREND</span>
-          <span class="conf conf-low">LOW</span>
-        </div>
-      </div>
-
-      <div class="momentum-row">
-        <div class="momentum-item">
-          <span class="momentum-label">vs 24h ago</span>
-          <span class="dir dir-up">&uarr; +Y402 &middot; +2.7%</span>
-        </div>
-        <div class="momentum-item">
-          <span class="momentum-label">vs 1h ago</span>
-          <span class="dir dir-flat">&rarr; +Y0 &middot; +0.0%</span>
-        </div>
-      </div>
-
-      <div class="spark-row">
-        <div class="spark-block">
-          <span class="spark-label">Price (24h median, last 48h)</span>
-          <svg width="280" height="64" viewBox="0 0 280 64">
-      <defs>
-        <linearGradient id="grad-31" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
-          <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <path d="M 4.0,58.0 L 4.0,49.3 L 10.8,58.0 L 17.6,58.0 L 24.4,58.0 L 31.2,58.0 L 38.0,58.0 L 44.8,49.3 L 51.6,49.3 L 58.4,49.3 L 65.2,49.3 L 72.0,40.8 L 78.8,49.3 L 85.6,49.3 L 92.4,40.8 L 99.2,32.3 L 106.0,32.3 L 112.8,32.3 L 119.6,32.3 L 126.4,32.1 L 133.2,32.1 L 140.0,32.1 L 146.8,32.0 L 153.6,32.0 L 160.4,32.0 L 167.2,32.0 L 174.0,14.7 L 180.8,14.7 L 187.6,14.7 L 194.4,14.7 L 201.2,14.7 L 208.0,14.7 L 214.8,14.7 L 221.6,14.7 L 228.4,14.7 L 235.2,10.3 L 242.0,6.0 L 248.8,8.2 L 255.6,8.2 L 262.4,8.2 L 269.2,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-31)"/>
-      <line x1="4" y1="49.3" x2="276" y2="49.3"
-            stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,49.3 10.8,58.0 17.6,58.0 24.4,58.0 31.2,58.0 38.0,58.0 44.8,49.3 51.6,49.3 58.4,49.3 65.2,49.3 72.0,40.8 78.8,49.3 85.6,49.3 92.4,40.8 99.2,32.3 106.0,32.3 112.8,32.3 119.6,32.3 126.4,32.1 133.2,32.1 140.0,32.1 146.8,32.0 153.6,32.0 160.4,32.0 167.2,32.0 174.0,14.7 180.8,14.7 187.6,14.7 194.4,14.7 201.2,14.7 208.0,14.7 214.8,14.7 221.6,14.7 228.4,14.7 235.2,10.3 242.0,6.0 248.8,8.2 255.6,8.2 262.4,8.2 269.2,6.0 276.0,6.0" fill="none" stroke="#00a870"
-                stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
-      <circle class="pulse-ring" cx="276.0" cy="6.0" r="5" fill="#00a870" opacity="0.35"/>
-      <circle cx="276.0" cy="6.0" r="3" fill="#00a870"/>
-    </svg>
-        </div>
-      </div>
-
-      <div class="volume-row">
-        <div class="volume-stat">
-          <span class="volume-number">43</span>
-          <span class="volume-label">sales in last 24h</span>
-        </div>
-        <div class="spark-block">
-          <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="24.1" width="2.3" height="13.9" fill="#7a9188" rx="1"/><rect x="5.8" y="19.2" width="2.3" height="18.8" fill="#7a9188" rx="1"/><rect x="9.6" y="16.7" width="2.3" height="21.3" fill="#7a9188" rx="1"/><rect x="13.4" y="16.7" width="2.3" height="21.3" fill="#7a9188" rx="1"/><rect x="17.2" y="15.9" width="2.3" height="22.1" fill="#7a9188" rx="1"/><rect x="21.0" y="15.9" width="2.3" height="22.1" fill="#7a9188" rx="1"/><rect x="24.8" y="14.3" width="2.3" height="23.7" fill="#7a9188" rx="1"/><rect x="28.6" y="12.6" width="2.3" height="25.4" fill="#7a9188" rx="1"/><rect x="32.4" y="10.2" width="2.3" height="27.8" fill="#7a9188" rx="1"/><rect x="36.2" y="9.4" width="2.3" height="28.6" fill="#7a9188" rx="1"/><rect x="40.0" y="8.5" width="2.3" height="29.5" fill="#7a9188" rx="1"/><rect x="43.9" y="10.2" width="2.3" height="27.8" fill="#7a9188" rx="1"/><rect x="47.7" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="51.5" y="11.8" width="2.3" height="26.2" fill="#7a9188" rx="1"/><rect x="55.3" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="59.1" y="10.2" width="2.3" height="27.8" fill="#7a9188" rx="1"/><rect x="62.9" y="10.2" width="2.3" height="27.8" fill="#7a9188" rx="1"/><rect x="66.7" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="70.5" y="10.2" width="2.3" height="27.8" fill="#7a9188" rx="1"/><rect x="74.3" y="9.4" width="2.3" height="28.6" fill="#7a9188" rx="1"/><rect x="78.1" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="81.9" y="13.5" width="2.3" height="24.5" fill="#7a9188" rx="1"/><rect x="85.7" y="15.1" width="2.3" height="22.9" fill="#7a9188" rx="1"/><rect x="89.5" y="17.5" width="2.3" height="20.5" fill="#7a9188" rx="1"/><rect x="93.3" y="13.5" width="2.3" height="24.5" fill="#7a9188" rx="1"/><rect x="97.1" y="7.7" width="2.3" height="30.3" fill="#7a9188" rx="1"/><rect x="100.9" y="6.1" width="2.3" height="31.9" fill="#7a9188" rx="1"/><rect x="104.7" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="108.5" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="112.3" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="116.1" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="120.0" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="123.8" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="127.6" y="4.5" width="2.3" height="33.5" fill="#7a9188" rx="1"/><rect x="131.4" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="135.2" y="5.3" width="2.3" height="32.7" fill="#7a9188" rx="1"/><rect x="139.0" y="3.6" width="2.3" height="34.4" fill="#7a9188" rx="1"/><rect x="142.8" y="3.6" width="2.3" height="34.4" fill="#7a9188" rx="1"/><rect x="146.6" y="3.6" width="2.3" height="34.4" fill="#7a9188" rx="1"/><rect x="150.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="154.2" y="2.8" width="2.3" height="35.2" fill="#7a9188" rx="1"/></svg>
-        </div>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/91176/sales-histories" target="_blank" rel="noopener">Umbreon V SR: SA</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
-        </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -731,15 +779,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-38" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-44" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,42.7 L 11.0,58.0 L 17.9,58.0 L 24.9,27.3 L 31.9,27.3 L 38.9,27.3 L 45.8,27.3 L 52.8,42.7 L 59.8,58.0 L 66.8,58.0 L 73.7,58.0 L 80.7,58.0 L 87.7,58.0 L 94.7,58.0 L 101.6,58.0 L 108.6,58.0 L 115.6,42.4 L 122.6,26.8 L 129.5,16.4 L 136.5,16.4 L 143.5,16.4 L 150.5,16.4 L 157.4,16.4 L 164.4,16.4 L 171.4,16.4 L 178.4,16.4 L 185.3,6.0 L 192.3,6.0 L 199.3,6.0 L 206.3,6.0 L 213.2,6.0 L 220.2,6.0 L 227.2,6.0 L 234.2,6.0 L 241.1,6.0 L 248.1,6.0 L 255.1,6.0 L 262.1,6.0 L 269.0,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-38)"/>
+      <path d="M 4.0,58.0 L 4.0,42.7 L 10.8,58.0 L 17.6,58.0 L 24.4,27.3 L 31.2,27.3 L 38.0,27.3 L 44.8,27.3 L 51.6,42.7 L 58.4,58.0 L 65.2,58.0 L 72.0,58.0 L 78.8,58.0 L 85.6,58.0 L 92.4,58.0 L 99.2,58.0 L 106.0,58.0 L 112.8,42.4 L 119.6,26.8 L 126.4,16.4 L 133.2,16.4 L 140.0,16.4 L 146.8,16.4 L 153.6,16.4 L 160.4,16.4 L 167.2,16.4 L 174.0,16.4 L 180.8,6.0 L 187.6,6.0 L 194.4,6.0 L 201.2,6.0 L 208.0,6.0 L 214.8,6.0 L 221.6,6.0 L 228.4,6.0 L 235.2,6.0 L 242.0,6.0 L 248.8,6.0 L 255.6,6.0 L 262.4,6.0 L 269.2,6.0 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-44)"/>
       <line x1="4" y1="42.7" x2="276" y2="42.7"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,42.7 11.0,58.0 17.9,58.0 24.9,27.3 31.9,27.3 38.9,27.3 45.8,27.3 52.8,42.7 59.8,58.0 66.8,58.0 73.7,58.0 80.7,58.0 87.7,58.0 94.7,58.0 101.6,58.0 108.6,58.0 115.6,42.4 122.6,26.8 129.5,16.4 136.5,16.4 143.5,16.4 150.5,16.4 157.4,16.4 164.4,16.4 171.4,16.4 178.4,16.4 185.3,6.0 192.3,6.0 199.3,6.0 206.3,6.0 213.2,6.0 220.2,6.0 227.2,6.0 234.2,6.0 241.1,6.0 248.1,6.0 255.1,6.0 262.1,6.0 269.0,6.0 276.0,6.0" fill="none" stroke="#00a870"
+      <polyline points="4.0,42.7 10.8,58.0 17.6,58.0 24.4,27.3 31.2,27.3 38.0,27.3 44.8,27.3 51.6,42.7 58.4,58.0 65.2,58.0 72.0,58.0 78.8,58.0 85.6,58.0 92.4,58.0 99.2,58.0 106.0,58.0 112.8,42.4 119.6,26.8 126.4,16.4 133.2,16.4 140.0,16.4 146.8,16.4 153.6,16.4 160.4,16.4 167.2,16.4 174.0,16.4 180.8,6.0 187.6,6.0 194.4,6.0 201.2,6.0 208.0,6.0 214.8,6.0 221.6,6.0 228.4,6.0 235.2,6.0 242.0,6.0 248.8,6.0 255.6,6.0 262.4,6.0 269.2,6.0 276.0,6.0" fill="none" stroke="#00a870"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="6.0" r="5" fill="#00a870" opacity="0.35"/>
       <circle cx="276.0" cy="6.0" r="3" fill="#00a870"/>
@@ -754,19 +802,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="24.2" width="2.4" height="13.8" fill="#7a9188" rx="1"/><rect x="5.9" y="22.8" width="2.4" height="15.2" fill="#7a9188" rx="1"/><rect x="9.8" y="22.8" width="2.4" height="15.2" fill="#7a9188" rx="1"/><rect x="13.7" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="17.6" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="21.5" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="25.4" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="29.3" y="7.5" width="2.4" height="30.5" fill="#7a9188" rx="1"/><rect x="33.2" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="37.1" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="41.0" y="24.2" width="2.4" height="13.8" fill="#7a9188" rx="1"/><rect x="44.9" y="24.2" width="2.4" height="13.8" fill="#7a9188" rx="1"/><rect x="48.8" y="22.8" width="2.4" height="15.2" fill="#7a9188" rx="1"/><rect x="52.7" y="22.8" width="2.4" height="15.2" fill="#7a9188" rx="1"/><rect x="56.6" y="22.8" width="2.4" height="15.2" fill="#7a9188" rx="1"/><rect x="60.5" y="22.8" width="2.4" height="15.2" fill="#7a9188" rx="1"/><rect x="64.4" y="21.4" width="2.4" height="16.6" fill="#7a9188" rx="1"/><rect x="68.3" y="18.6" width="2.4" height="19.4" fill="#7a9188" rx="1"/><rect x="72.2" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="76.1" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="80.0" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="83.9" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="87.8" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="91.7" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="95.6" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="99.5" y="15.8" width="2.4" height="22.2" fill="#7a9188" rx="1"/><rect x="103.4" y="14.5" width="2.4" height="23.5" fill="#7a9188" rx="1"/><rect x="107.3" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="111.2" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="115.1" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="119.0" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="122.9" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="126.8" y="13.1" width="2.4" height="24.9" fill="#7a9188" rx="1"/><rect x="130.7" y="18.6" width="2.4" height="19.4" fill="#7a9188" rx="1"/><rect x="134.6" y="24.2" width="2.4" height="13.8" fill="#7a9188" rx="1"/><rect x="138.5" y="25.5" width="2.4" height="12.5" fill="#7a9188" rx="1"/><rect x="142.4" y="26.9" width="2.4" height="11.1" fill="#7a9188" rx="1"/><rect x="146.3" y="26.9" width="2.4" height="11.1" fill="#7a9188" rx="1"/><rect x="150.2" y="26.9" width="2.4" height="11.1" fill="#7a9188" rx="1"/><rect x="154.1" y="26.9" width="2.4" height="11.1" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="24.2" width="2.3" height="13.8" fill="#7a9188" rx="1"/><rect x="5.8" y="22.8" width="2.3" height="15.2" fill="#7a9188" rx="1"/><rect x="9.6" y="22.8" width="2.3" height="15.2" fill="#7a9188" rx="1"/><rect x="13.4" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="17.2" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="21.0" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="24.8" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="28.6" y="7.5" width="2.3" height="30.5" fill="#7a9188" rx="1"/><rect x="32.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="36.2" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="40.0" y="24.2" width="2.3" height="13.8" fill="#7a9188" rx="1"/><rect x="43.9" y="24.2" width="2.3" height="13.8" fill="#7a9188" rx="1"/><rect x="47.7" y="22.8" width="2.3" height="15.2" fill="#7a9188" rx="1"/><rect x="51.5" y="22.8" width="2.3" height="15.2" fill="#7a9188" rx="1"/><rect x="55.3" y="22.8" width="2.3" height="15.2" fill="#7a9188" rx="1"/><rect x="59.1" y="22.8" width="2.3" height="15.2" fill="#7a9188" rx="1"/><rect x="62.9" y="21.4" width="2.3" height="16.6" fill="#7a9188" rx="1"/><rect x="66.7" y="18.6" width="2.3" height="19.4" fill="#7a9188" rx="1"/><rect x="70.5" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="74.3" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="78.1" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="81.9" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="85.7" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="89.5" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="93.3" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="97.1" y="15.8" width="2.3" height="22.2" fill="#7a9188" rx="1"/><rect x="100.9" y="14.5" width="2.3" height="23.5" fill="#7a9188" rx="1"/><rect x="104.7" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="108.5" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="112.3" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="116.1" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="120.0" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="123.8" y="13.1" width="2.3" height="24.9" fill="#7a9188" rx="1"/><rect x="127.6" y="18.6" width="2.3" height="19.4" fill="#7a9188" rx="1"/><rect x="131.4" y="24.2" width="2.3" height="13.8" fill="#7a9188" rx="1"/><rect x="135.2" y="25.5" width="2.3" height="12.5" fill="#7a9188" rx="1"/><rect x="139.0" y="26.9" width="2.3" height="11.1" fill="#7a9188" rx="1"/><rect x="142.8" y="26.9" width="2.3" height="11.1" fill="#7a9188" rx="1"/><rect x="146.6" y="26.9" width="2.3" height="11.1" fill="#7a9188" rx="1"/><rect x="150.4" y="26.9" width="2.3" height="11.1" fill="#7a9188" rx="1"/><rect x="154.2" y="26.9" width="2.3" height="11.1" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/96562/sales-histories" target="_blank" rel="noopener">Rayquaza V SR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Rayquaza V SR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/96562/sales-histories" target="_blank" rel="noopener">Rayquaza V SR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">2m ago</span>
         </div>
-        <span class="last-checked">2m ago</span>
       </div>
 
       <div class="price-row">
@@ -793,12 +844,12 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-29" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-35" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,6.0 L 22.1,6.0 L 40.3,58.0 L 58.4,58.0 L 76.5,58.0 L 94.7,58.0 L 112.8,58.0 L 130.9,58.0 L 149.1,58.0 L 167.2,58.0 L 185.3,58.0 L 203.5,58.0 L 221.6,58.0 L 239.7,58.0 L 257.9,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-29)"/>
+      <path d="M 4.0,58.0 L 4.0,6.0 L 22.1,6.0 L 40.3,58.0 L 58.4,58.0 L 76.5,58.0 L 94.7,58.0 L 112.8,58.0 L 130.9,58.0 L 149.1,58.0 L 167.2,58.0 L 185.3,58.0 L 203.5,58.0 L 221.6,58.0 L 239.7,58.0 L 257.9,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-35)"/>
       <line x1="4" y1="6.0" x2="276" y2="6.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
       <polyline points="4.0,6.0 22.1,6.0 40.3,58.0 58.4,58.0 76.5,58.0 94.7,58.0 112.8,58.0 130.9,58.0 149.1,58.0 167.2,58.0 185.3,58.0 203.5,58.0 221.6,58.0 239.7,58.0 257.9,58.0 276.0,58.0" fill="none" stroke="#7a9188"
@@ -816,19 +867,73 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="5.9" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="9.8" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="13.7" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="17.6" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="21.5" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="25.4" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="29.3" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="33.2" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="37.1" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="41.0" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="44.9" y="2.0" width="2.4" height="36.0" fill="#7a9188" rx="1"/><rect x="48.8" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="52.7" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="56.6" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="60.5" y="20.0" width="2.4" height="18.0" fill="#7a9188" rx="1"/><rect x="64.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="68.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="72.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="76.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="80.0" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="83.9" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="87.8" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="91.7" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="95.6" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="99.5" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="103.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="107.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="111.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="115.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="119.0" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="122.9" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="126.8" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="130.7" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="134.6" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="138.5" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="142.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="146.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="150.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="154.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="5.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="9.6" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="13.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="17.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="21.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="24.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="28.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="32.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="36.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="40.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="43.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="47.7" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="51.5" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="55.3" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="59.1" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="62.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="66.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="70.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="74.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="78.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="81.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="85.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="89.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="93.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="97.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="100.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="104.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="108.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="112.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="116.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="120.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="123.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="127.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="131.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="135.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="139.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="142.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="146.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="150.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="154.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/104593/sales-histories" target="_blank" rel="noopener">Mewtwo &amp; Mew GX SR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Mewtwo &amp; Mew GX SR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/104593/sales-histories" target="_blank" rel="noopener">Mewtwo &amp; Mew GX SR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">2m ago</span>
         </div>
-        <span class="last-checked">2m ago</span>
+      </div>
+
+      <div class="price-row">
+        <span class="price">n/a</span>
+        <div class="price-row-badges">
+          <span class="trend-pill pill-flat">STABLE</span>
+          <span class="conf conf-none">NONE</span>
+        </div>
+      </div>
+
+      <div class="momentum-row">
+        <div class="momentum-item">
+          <span class="momentum-label">vs 24h ago</span>
+          <span class="dir dir-flat">&ndash; n/a</span>
+        </div>
+        <div class="momentum-item">
+          <span class="momentum-label">vs 1h ago</span>
+          <span class="dir dir-flat">&ndash; n/a</span>
+        </div>
+      </div>
+
+      <div class="spark-row">
+        <div class="spark-block">
+          <span class="spark-label">Price (24h median, last 48h)</span>
+          <svg width="280" height="64" viewBox="0 0 280 64"><line x1="4" y1="32.0" x2="276" y2="32.0" stroke="#dbe6e0" stroke-width="2" stroke-dasharray="3,3"/></svg>
+        </div>
+      </div>
+
+      <div class="volume-row">
+        <div class="volume-stat">
+          <span class="volume-number">0</span>
+          <span class="volume-label">sales in last 24h</span>
+        </div>
+        <div class="spark-block">
+          <span class="spark-label">Volume trend</span>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="5.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="9.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="13.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="16.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="20.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="24.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="28.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="31.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="35.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="39.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="42.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="46.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="50.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="54.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="57.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="61.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="65.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="68.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="72.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="76.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="80.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="83.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="87.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="91.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="94.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="98.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="102.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="106.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="109.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="113.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="117.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="120.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="124.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="128.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="132.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="135.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="139.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="143.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="146.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="150.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="154.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/></svg>
+        </div>
+      </div>
+    </div>
+    
+    <div class="card">
+      <div class="card-top">
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Rayquaza VMAX HR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/96630/sales-histories" target="_blank" rel="noopener">Rayquaza VMAX HR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
+        </div>
       </div>
 
       <div class="price-row">
@@ -871,60 +976,15 @@
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/96630/sales-histories" target="_blank" rel="noopener">Rayquaza VMAX HR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Eevee &amp; Snorlax GX: PROMO" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/107497/sales-histories" target="_blank" rel="noopener">Eevee &amp; Snorlax GX: PROMO</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">1m ago</span>
-      </div>
-
-      <div class="price-row">
-        <span class="price">n/a</span>
-        <div class="price-row-badges">
-          <span class="trend-pill pill-flat">STABLE</span>
-          <span class="conf conf-none">NONE</span>
-        </div>
-      </div>
-
-      <div class="momentum-row">
-        <div class="momentum-item">
-          <span class="momentum-label">vs 24h ago</span>
-          <span class="dir dir-flat">&ndash; n/a</span>
-        </div>
-        <div class="momentum-item">
-          <span class="momentum-label">vs 1h ago</span>
-          <span class="dir dir-flat">&ndash; n/a</span>
-        </div>
-      </div>
-
-      <div class="spark-row">
-        <div class="spark-block">
-          <span class="spark-label">Price (24h median, last 48h)</span>
-          <svg width="280" height="64" viewBox="0 0 280 64"><line x1="4" y1="32.0" x2="276" y2="32.0" stroke="#dbe6e0" stroke-width="2" stroke-dasharray="3,3"/></svg>
-        </div>
-      </div>
-
-      <div class="volume-row">
-        <div class="volume-stat">
-          <span class="volume-number">0</span>
-          <span class="volume-label">sales in last 24h</span>
-        </div>
-        <div class="spark-block">
-          <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="5.9" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="9.8" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="13.7" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="17.6" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="21.5" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="25.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="29.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="33.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="37.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="41.0" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="44.9" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="48.8" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="52.7" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="56.6" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="60.5" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="64.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="68.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="72.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="76.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="80.0" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="83.9" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="87.8" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="91.7" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="95.6" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="99.5" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="103.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="107.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="111.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="115.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="119.0" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="122.9" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="126.8" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="130.7" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="134.6" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="138.5" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="142.4" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="146.3" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="150.2" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/><rect x="154.1" y="37.0" width="2.4" height="1.0" fill="#7a9188" rx="1"/></svg>
-        </div>
-      </div>
-    </div>
-    
-    <div class="card">
-      <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/107497/sales-histories" target="_blank" rel="noopener">Eevee &amp; Snorlax GX: PROMO</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
-        </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -951,15 +1011,15 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-35" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-41" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,58.0 L 17.0,58.0 L 29.9,58.0 L 42.9,58.0 L 55.8,58.0 L 68.8,58.0 L 81.7,58.0 L 94.7,58.0 L 107.6,58.0 L 120.6,58.0 L 133.5,58.0 L 146.5,58.0 L 159.4,58.0 L 172.4,58.0 L 185.3,58.0 L 198.3,58.0 L 211.2,58.0 L 224.2,58.0 L 237.1,58.0 L 250.1,58.0 L 263.0,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-35)"/>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 16.4,58.0 L 28.7,58.0 L 41.1,58.0 L 53.5,58.0 L 65.8,58.0 L 78.2,58.0 L 90.5,58.0 L 102.9,58.0 L 115.3,58.0 L 127.6,58.0 L 140.0,58.0 L 152.4,58.0 L 164.7,58.0 L 177.1,58.0 L 189.5,58.0 L 201.8,58.0 L 214.2,58.0 L 226.5,58.0 L 238.9,58.0 L 251.3,58.0 L 263.6,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-41)"/>
       <line x1="4" y1="58.0" x2="276" y2="58.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
-      <polyline points="4.0,58.0 17.0,58.0 29.9,58.0 42.9,58.0 55.8,58.0 68.8,58.0 81.7,58.0 94.7,58.0 107.6,58.0 120.6,58.0 133.5,58.0 146.5,58.0 159.4,58.0 172.4,58.0 185.3,58.0 198.3,58.0 211.2,58.0 224.2,58.0 237.1,58.0 250.1,58.0 263.0,58.0 276.0,58.0" fill="none" stroke="#7a9188"
+      <polyline points="4.0,58.0 16.4,58.0 28.7,58.0 41.1,58.0 53.5,58.0 65.8,58.0 78.2,58.0 90.5,58.0 102.9,58.0 115.3,58.0 127.6,58.0 140.0,58.0 152.4,58.0 164.7,58.0 177.1,58.0 189.5,58.0 201.8,58.0 214.2,58.0 226.5,58.0 238.9,58.0 251.3,58.0 263.6,58.0 276.0,58.0" fill="none" stroke="#7a9188"
                 stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
       <circle class="pulse-ring" cx="276.0" cy="58.0" r="5" fill="#7a9188" opacity="0.35"/>
       <circle cx="276.0" cy="58.0" r="3" fill="#7a9188"/>
@@ -974,19 +1034,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="5.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="9.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="13.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="17.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="21.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="24.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="28.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="32.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="36.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="40.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="43.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="47.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="51.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="55.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="59.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="62.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="66.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="70.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="74.3" y="26.0" width="2.3" height="12.0" fill="#7a9188" rx="1"/><rect x="78.1" y="14.0" width="2.3" height="24.0" fill="#7a9188" rx="1"/><rect x="81.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="85.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="89.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="93.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="97.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="100.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="104.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="108.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="112.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="116.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="120.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="123.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="127.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="131.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="135.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="139.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="142.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="146.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="150.4" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="154.2" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="5.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="9.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="13.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="16.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="20.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="24.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="28.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="31.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="35.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="39.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="42.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="46.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="50.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="54.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="57.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="61.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="65.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="68.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="72.6" y="26.0" width="2.2" height="12.0" fill="#7a9188" rx="1"/><rect x="76.3" y="14.0" width="2.2" height="24.0" fill="#7a9188" rx="1"/><rect x="80.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="83.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="87.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="91.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="94.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="98.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="102.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="106.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="109.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="113.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="117.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="120.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="124.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="128.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="132.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="135.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="139.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="143.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="146.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="150.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="154.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/91147/sales-histories" target="_blank" rel="noopener">Charizard V SR: SA</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Charizard V SR: SA" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/91147/sales-histories" target="_blank" rel="noopener">Charizard V SR: SA</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -1013,12 +1076,12 @@
           <span class="spark-label">Price (24h median, last 48h)</span>
           <svg width="280" height="64" viewBox="0 0 280 64">
       <defs>
-        <linearGradient id="grad-36" x1="0" y1="0" x2="0" y2="1">
+        <linearGradient id="grad-42" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0%" stop-color="#00a870" stop-opacity="0.22"/>
           <stop offset="100%" stop-color="#00a870" stop-opacity="0"/>
         </linearGradient>
       </defs>
-      <path d="M 4.0,58.0 L 4.0,58.0 L 12.8,58.0 L 21.5,58.0 L 30.3,58.0 L 39.1,41.0 L 47.9,41.0 L 56.6,41.0 L 65.4,41.0 L 74.2,41.0 L 83.0,40.8 L 91.7,40.8 L 100.5,40.8 L 109.3,40.8 L 118.1,40.8 L 126.8,40.8 L 135.6,40.8 L 144.4,40.8 L 153.2,40.8 L 161.9,40.8 L 170.7,40.8 L 179.5,40.8 L 188.3,40.8 L 197.0,40.8 L 205.8,40.8 L 214.6,40.8 L 223.4,40.8 L 232.1,40.7 L 240.9,33.0 L 249.7,33.0 L 258.5,25.3 L 267.2,15.6 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-36)"/>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 12.8,58.0 L 21.5,58.0 L 30.3,58.0 L 39.1,41.0 L 47.9,41.0 L 56.6,41.0 L 65.4,41.0 L 74.2,41.0 L 83.0,40.8 L 91.7,40.8 L 100.5,40.8 L 109.3,40.8 L 118.1,40.8 L 126.8,40.8 L 135.6,40.8 L 144.4,40.8 L 153.2,40.8 L 161.9,40.8 L 170.7,40.8 L 179.5,40.8 L 188.3,40.8 L 197.0,40.8 L 205.8,40.8 L 214.6,40.8 L 223.4,40.8 L 232.1,40.7 L 240.9,33.0 L 249.7,33.0 L 258.5,25.3 L 267.2,15.6 L 276.0,6.0 L 276.0,58.0 Z" fill="url(#grad-42)"/>
       <line x1="4" y1="58.0" x2="276" y2="58.0"
             stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
       <polyline points="4.0,58.0 12.8,58.0 21.5,58.0 30.3,58.0 39.1,41.0 47.9,41.0 56.6,41.0 65.4,41.0 74.2,41.0 83.0,40.8 91.7,40.8 100.5,40.8 109.3,40.8 118.1,40.8 126.8,40.8 135.6,40.8 144.4,40.8 153.2,40.8 161.9,40.8 170.7,40.8 179.5,40.8 188.3,40.8 197.0,40.8 205.8,40.8 214.6,40.8 223.4,40.8 232.1,40.7 240.9,33.0 249.7,33.0 258.5,25.3 267.2,15.6 276.0,6.0" fill="none" stroke="#00a870"
@@ -1036,19 +1099,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="5.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="9.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="13.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="17.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="21.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="24.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="28.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="32.4" y="33.5" width="2.3" height="4.5" fill="#7a9188" rx="1"/><rect x="36.2" y="29.0" width="2.3" height="9.0" fill="#7a9188" rx="1"/><rect x="40.0" y="29.0" width="2.3" height="9.0" fill="#7a9188" rx="1"/><rect x="43.9" y="24.5" width="2.3" height="13.5" fill="#7a9188" rx="1"/><rect x="47.7" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="51.5" y="6.5" width="2.3" height="31.5" fill="#7a9188" rx="1"/><rect x="55.3" y="6.5" width="2.3" height="31.5" fill="#7a9188" rx="1"/><rect x="59.1" y="6.5" width="2.3" height="31.5" fill="#7a9188" rx="1"/><rect x="62.9" y="6.5" width="2.3" height="31.5" fill="#7a9188" rx="1"/><rect x="66.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="70.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="74.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="78.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="81.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="85.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="89.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="93.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="97.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="100.9" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="104.7" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="108.5" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="112.3" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="116.1" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="120.0" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="123.8" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="127.6" y="2.0" width="2.3" height="36.0" fill="#7a9188" rx="1"/><rect x="131.4" y="6.5" width="2.3" height="31.5" fill="#7a9188" rx="1"/><rect x="135.2" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="139.0" y="11.0" width="2.3" height="27.0" fill="#7a9188" rx="1"/><rect x="142.8" y="15.5" width="2.3" height="22.5" fill="#7a9188" rx="1"/><rect x="146.6" y="20.0" width="2.3" height="18.0" fill="#7a9188" rx="1"/><rect x="150.4" y="33.5" width="2.3" height="4.5" fill="#7a9188" rx="1"/><rect x="154.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="5.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="9.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="13.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="16.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="20.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="24.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="28.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="31.7" y="33.5" width="2.2" height="4.5" fill="#7a9188" rx="1"/><rect x="35.4" y="29.0" width="2.2" height="9.0" fill="#7a9188" rx="1"/><rect x="39.1" y="29.0" width="2.2" height="9.0" fill="#7a9188" rx="1"/><rect x="42.9" y="24.5" width="2.2" height="13.5" fill="#7a9188" rx="1"/><rect x="46.6" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="50.3" y="6.5" width="2.2" height="31.5" fill="#7a9188" rx="1"/><rect x="54.0" y="6.5" width="2.2" height="31.5" fill="#7a9188" rx="1"/><rect x="57.7" y="6.5" width="2.2" height="31.5" fill="#7a9188" rx="1"/><rect x="61.4" y="6.5" width="2.2" height="31.5" fill="#7a9188" rx="1"/><rect x="65.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="68.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="72.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="76.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="80.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="83.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="87.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="91.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="94.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="98.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="102.3" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="106.0" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="109.7" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="113.4" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="117.1" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="120.9" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="124.6" y="2.0" width="2.2" height="36.0" fill="#7a9188" rx="1"/><rect x="128.3" y="6.5" width="2.2" height="31.5" fill="#7a9188" rx="1"/><rect x="132.0" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="135.7" y="11.0" width="2.2" height="27.0" fill="#7a9188" rx="1"/><rect x="139.4" y="15.5" width="2.2" height="22.5" fill="#7a9188" rx="1"/><rect x="143.1" y="20.0" width="2.2" height="18.0" fill="#7a9188" rx="1"/><rect x="146.9" y="33.5" width="2.2" height="4.5" fill="#7a9188" rx="1"/><rect x="150.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="154.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/107574/sales-histories" target="_blank" rel="noopener">Armored Mewtwo</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Armored Mewtwo" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/107574/sales-histories" target="_blank" rel="noopener">Armored Mewtwo</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -1084,19 +1150,22 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="5.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="9.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="13.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="17.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="21.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="24.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="28.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="32.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="36.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="40.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="43.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="47.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="51.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="55.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="59.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="62.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="66.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="70.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="74.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="78.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="81.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="85.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="89.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="93.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="97.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="100.9" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="104.7" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="108.5" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="112.3" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="116.1" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="120.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="123.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="127.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="131.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="135.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="139.0" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="142.8" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="146.6" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="150.4" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/><rect x="154.2" y="37.0" width="2.3" height="1.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="5.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="9.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="13.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="16.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="20.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="24.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="28.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="31.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="35.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="39.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="42.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="46.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="50.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="54.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="57.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="61.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="65.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="68.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="72.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="76.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="80.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="83.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="87.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="91.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="94.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="98.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="102.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="106.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="109.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="113.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="117.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="120.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="124.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="128.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="132.0" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="135.7" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="139.4" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="143.1" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="146.9" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="150.6" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/><rect x="154.3" y="37.0" width="2.2" height="1.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/91133/sales-histories" target="_blank" rel="noopener">Mewtwo V GO SR: SA</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Mewtwo V GO SR: SA" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/91133/sales-histories" target="_blank" rel="noopener">Mewtwo V GO SR: SA</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -1114,14 +1183,28 @@
         </div>
         <div class="momentum-item">
           <span class="momentum-label">vs 1h ago</span>
-          <span class="dir dir-flat">&ndash; n/a</span>
+          <span class="dir dir-flat">&rarr; +Y0 &middot; +0.0%</span>
         </div>
       </div>
 
       <div class="spark-row">
         <div class="spark-block">
           <span class="spark-label">Price (24h median, last 48h)</span>
-          <svg width="280" height="64" viewBox="0 0 280 64"><circle cx="140.0" cy="32.0" r="3" fill="#7a9188"/></svg>
+          <svg width="280" height="64" viewBox="0 0 280 64">
+      <defs>
+        <linearGradient id="grad-46" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-46)"/>
+      <line x1="4" y1="58.0" x2="276" y2="58.0"
+            stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
+      <polyline points="4.0,58.0 276.0,58.0" fill="none" stroke="#7a9188"
+                stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle class="pulse-ring" cx="276.0" cy="58.0" r="5" fill="#7a9188" opacity="0.35"/>
+      <circle cx="276.0" cy="58.0" r="3" fill="#7a9188"/>
+    </svg>
         </div>
       </div>
 
@@ -1132,26 +1215,29 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="154.5" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="76.5" height="36.0" fill="#7a9188" rx="1"/><rect x="80.0" y="2.0" width="76.5" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/128121/sales-histories" target="_blank" rel="noopener">Mew ex SAR</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Mew ex SAR" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/128121/sales-histories" target="_blank" rel="noopener">Mew ex SAR</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
-        <span class="price">Y88,000</span>
+        <span class="price">Y87,450</span>
         <div class="price-row-badges">
           <span class="trend-pill pill-flat">STABLE</span>
-          <span class="conf conf-low">LOW</span>
+          <span class="conf conf-med">MEDIUM</span>
         </div>
       </div>
 
@@ -1162,37 +1248,54 @@
         </div>
         <div class="momentum-item">
           <span class="momentum-label">vs 1h ago</span>
-          <span class="dir dir-flat">&ndash; n/a</span>
+          <span class="dir dir-flat">&rarr; Y-550 &middot; -0.6%</span>
         </div>
       </div>
 
       <div class="spark-row">
         <div class="spark-block">
           <span class="spark-label">Price (24h median, last 48h)</span>
-          <svg width="280" height="64" viewBox="0 0 280 64"><circle cx="140.0" cy="32.0" r="3" fill="#7a9188"/></svg>
+          <svg width="280" height="64" viewBox="0 0 280 64">
+      <defs>
+        <linearGradient id="grad-47" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M 4.0,58.0 L 4.0,6.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-47)"/>
+      <line x1="4" y1="6.0" x2="276" y2="6.0"
+            stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
+      <polyline points="4.0,6.0 276.0,58.0" fill="none" stroke="#7a9188"
+                stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle class="pulse-ring" cx="276.0" cy="58.0" r="5" fill="#7a9188" opacity="0.35"/>
+      <circle cx="276.0" cy="58.0" r="3" fill="#7a9188"/>
+    </svg>
         </div>
       </div>
 
       <div class="volume-row">
         <div class="volume-stat">
-          <span class="volume-number">3</span>
+          <span class="volume-number">4</span>
           <span class="volume-label">sales in last 24h</span>
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="154.5" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="11.0" width="76.5" height="27.0" fill="#7a9188" rx="1"/><rect x="80.0" y="2.0" width="76.5" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
     
     <div class="card">
       <div class="card-top">
-        <div>
-          <h3><a href="https://snkrdunk.com/apparels/93004/sales-histories" target="_blank" rel="noopener">Espeon VMAX Promo</a></h3>
-          <span class="grade-badge">PSA 10</span>
-          
+        <img class="card-image" src="https://assets.snkrdunk.com/2c2f7d4ca40d035/img/common/og-image.png" alt="Espeon VMAX Promo" loading="lazy" onerror="this.outerHTML='<div class=&quot;card-image card-image-placeholder&quot;></div>'">
+        <div class="card-top-main">
+          <div>
+            <h3><a href="https://snkrdunk.com/apparels/93004/sales-histories" target="_blank" rel="noopener">Espeon VMAX Promo</a></h3>
+            <span class="grade-badge">PSA 10</span>
+            
+          </div>
+          <span class="last-checked">just now</span>
         </div>
-        <span class="last-checked">just now</span>
       </div>
 
       <div class="price-row">
@@ -1210,14 +1313,28 @@
         </div>
         <div class="momentum-item">
           <span class="momentum-label">vs 1h ago</span>
-          <span class="dir dir-flat">&ndash; n/a</span>
+          <span class="dir dir-flat">&rarr; +Y0 &middot; +0.0%</span>
         </div>
       </div>
 
       <div class="spark-row">
         <div class="spark-block">
           <span class="spark-label">Price (24h median, last 48h)</span>
-          <svg width="280" height="64" viewBox="0 0 280 64"><circle cx="140.0" cy="32.0" r="3" fill="#7a9188"/></svg>
+          <svg width="280" height="64" viewBox="0 0 280 64">
+      <defs>
+        <linearGradient id="grad-48" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#7a9188" stop-opacity="0.22"/>
+          <stop offset="100%" stop-color="#7a9188" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <path d="M 4.0,58.0 L 4.0,58.0 L 276.0,58.0 L 276.0,58.0 Z" fill="url(#grad-48)"/>
+      <line x1="4" y1="58.0" x2="276" y2="58.0"
+            stroke="#c3d1cb" stroke-width="1" stroke-dasharray="3,3"/>
+      <polyline points="4.0,58.0 276.0,58.0" fill="none" stroke="#7a9188"
+                stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+      <circle class="pulse-ring" cx="276.0" cy="58.0" r="5" fill="#7a9188" opacity="0.35"/>
+      <circle cx="276.0" cy="58.0" r="3" fill="#7a9188"/>
+    </svg>
         </div>
       </div>
 
@@ -1228,7 +1345,7 @@
         </div>
         <div class="spark-block">
           <span class="spark-label">Volume trend</span>
-          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="154.5" height="36.0" fill="#7a9188" rx="1"/></svg>
+          <svg width="160" height="40" viewBox="0 0 160 40"><rect x="2.0" y="2.0" width="76.5" height="36.0" fill="#7a9188" rx="1"/><rect x="80.0" y="2.0" width="76.5" height="36.0" fill="#7a9188" rx="1"/></svg>
         </div>
       </div>
     </div>
